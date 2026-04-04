@@ -4574,91 +4574,6 @@
   </div>
 </div>
 
-</main>
-</div><!-- /.layout -->
-
-<script>
-  // ── NAVIGATION with hash support (enables browser back/forward) ──
-  function canUseHistory() {
-    try { return window.self === window.top && window.location.href !== 'about:srcdoc'; } catch(e) { return false; }
-  }
-
-  function showPage(id, pushState) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    const page = document.getElementById('page-' + id);
-    if (page) page.classList.add('active');
-    document.querySelectorAll('.nav-item').forEach(n => {
-      if (n.getAttribute('onclick') && n.getAttribute('onclick').includes("'" + id + "'")) {
-        n.classList.add('active');
-      }
-    });
-    window.scrollTo(0, 0);
-    if (pushState !== false && canUseHistory()) {
-      try { history.pushState({ page: id }, '', '#' + id); } catch(e) {}
-    }
-  }
-
-  // Handle back/forward button
-  window.addEventListener('popstate', function(e) {
-    const id = e.state && e.state.page ? e.state.page : (location.hash.slice(1) || 'overview');
-    showPage(id, false);
-  });
-
-  // On first load, read hash from URL
-  document.addEventListener('DOMContentLoaded', function() {
-    const hash = location.hash.slice(1);
-    if (hash && document.getElementById('page-' + hash)) {
-      showPage(hash, false);
-    } else if (canUseHistory()) {
-      try { history.replaceState({ page: 'overview' }, '', '#overview'); } catch(e) {}
-    }
-
-    // Pre-load all saved notes
-    document.querySelectorAll('.note-area').forEach(ta => {
-      const onFocus = ta.getAttribute('onfocus');
-      if (onFocus) {
-        const match = onFocus.match(/loadNote\('([^']+)'/);
-        if (match) loadNote(match[1], ta);
-      }
-    });
-  });
-
-  // ── ACCORDION ──
-  function toggleQ(header) {
-    const body = header.nextElementSibling;
-    const isOpen = body.classList.contains('open');
-    if (!isOpen) {
-      body.classList.add('open');
-      header.classList.add('open');
-    } else {
-      body.classList.remove('open');
-      header.classList.remove('open');
-    }
-  }
-
-  // ── NOTES (localStorage) ──
-  function saveNote(key, value) {
-    try { localStorage.setItem('pf_note_' + key, value); } catch(e) {}
-  }
-
-  function loadNote(key, el) {
-    try {
-      const saved = localStorage.getItem('pf_note_' + key);
-      if (saved !== null) el.value = saved;
-    } catch(e) {}
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.note-area').forEach(ta => {
-      const onFocus = ta.getAttribute('onfocus');
-      if (onFocus) {
-        const match = onFocus.match(/loadNote\('([^']+)'/);
-        if (match) loadNote(match[1], ta);
-      }
-    });
-  });
-</script>
 
 <!-- ══ pages below are outside main/layout — still rendered by JS ══ -->
 
@@ -7058,6 +6973,92 @@
     20: C is FALSE (MIRR not always higher than IRR)
   </div>
 </div><!-- /page-practice2026 -->
+
+</main>
+</div><!-- /.layout -->
+
+<script>
+  // ── NAVIGATION with hash support (enables browser back/forward) ──
+  function canUseHistory() {
+    try { return window.self === window.top && window.location.href !== 'about:srcdoc'; } catch(e) { return false; }
+  }
+
+  function showPage(id, pushState) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const page = document.getElementById('page-' + id);
+    if (page) page.classList.add('active');
+    document.querySelectorAll('.nav-item').forEach(n => {
+      if (n.getAttribute('onclick') && n.getAttribute('onclick').includes("'" + id + "'")) {
+        n.classList.add('active');
+      }
+    });
+    window.scrollTo(0, 0);
+    if (pushState !== false && canUseHistory()) {
+      try { history.pushState({ page: id }, '', '#' + id); } catch(e) {}
+    }
+  }
+
+  // Handle back/forward button
+  window.addEventListener('popstate', function(e) {
+    const id = e.state && e.state.page ? e.state.page : (location.hash.slice(1) || 'overview');
+    showPage(id, false);
+  });
+
+  // On first load, read hash from URL
+  document.addEventListener('DOMContentLoaded', function() {
+    const hash = location.hash.slice(1);
+    if (hash && document.getElementById('page-' + hash)) {
+      showPage(hash, false);
+    } else if (canUseHistory()) {
+      try { history.replaceState({ page: 'overview' }, '', '#overview'); } catch(e) {}
+    }
+
+    // Pre-load all saved notes
+    document.querySelectorAll('.note-area').forEach(ta => {
+      const onFocus = ta.getAttribute('onfocus');
+      if (onFocus) {
+        const match = onFocus.match(/loadNote\('([^']+)'/);
+        if (match) loadNote(match[1], ta);
+      }
+    });
+  });
+
+  // ── ACCORDION ──
+  function toggleQ(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    if (!isOpen) {
+      body.classList.add('open');
+      header.classList.add('open');
+    } else {
+      body.classList.remove('open');
+      header.classList.remove('open');
+    }
+  }
+
+  // ── NOTES (localStorage) ──
+  function saveNote(key, value) {
+    try { localStorage.setItem('pf_note_' + key, value); } catch(e) {}
+  }
+
+  function loadNote(key, el) {
+    try {
+      const saved = localStorage.getItem('pf_note_' + key);
+      if (saved !== null) el.value = saved;
+    } catch(e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.note-area').forEach(ta => {
+      const onFocus = ta.getAttribute('onfocus');
+      if (onFocus) {
+        const match = onFocus.match(/loadNote\('([^']+)'/);
+        if (match) loadNote(match[1], ta);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
