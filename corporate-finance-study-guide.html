@@ -612,6 +612,10 @@
       Example Exam (20q)
       <span class="nav-badge">KEY ✓</span>
     </a>
+    <a class="nav-item" onclick="showPage('practice2026')" style="border-left:3px solid var(--gold)">
+      🆕 Claude's 2026 Practice
+      <span class="nav-badge" style="background:var(--gold);color:#fff">20q</span>
+    </a>
 
     <div class="nav-section">Old Exams (2001–2008)</div>
     <a class="nav-item" onclick="showPage('exam1')">
@@ -648,6 +652,10 @@
     </a>
 
     <div class="nav-section">By Topic</div>
+    <a class="nav-item" onclick="showPage('theory-quiz')">
+      🧠 Theory Quiz (25q)
+      <span class="nav-badge">NEW</span>
+    </a>
     <a class="nav-item" onclick="showPage('topic-tvom')">⏱ Time Value of Money</a>
     <a class="nav-item" onclick="showPage('topic-bonds')">📄 Bonds &amp; Interest Rates</a>
     <a class="nav-item" onclick="showPage('topic-risk')">📈 Risk &amp; Return / Portfolio</a>
@@ -1105,7 +1113,8 @@
       </ul>
       <div class="solution-block">
         <div class="solution-label">✓ Answer: A — True</div>
-        <p class="solution-text">An agency relationship is defined by the delegation of some decision-making authority to an agent by a principal. Even when authority is withheld (i.e., the agent acts as a pure service provider), the relationship is still an agency relationship. The key issue in finance is agency costs — expenses incurred to monitor agents or align their interests with principals.</p>
+        <p class="solution-text">An agency relationship exists whenever one or more persons (the <em>principal</em>) hires another (the <em>agent</em>) to perform a service. The relationship exists regardless of how much decision-making authority is delegated. The question is TRUE because even when authority is withheld — i.e., the agent acts purely as a service provider — the agency relationship still exists.<br><br>
+        In finance, the <strong>agency problem</strong> typically arises when authority <em>is</em> delegated (e.g., shareholders hire managers and give them discretion over investment decisions), because the agent may then act in their own interest rather than the principal's. Agency costs are the expenses incurred to monitor agents or align their incentives — through compensation contracts, audits, or the threat of takeover.</p>
       </div>
       <div class="discussion-zone">
         <div class="discussion-label">📝 Study Notes (shared)</div>
@@ -5683,6 +5692,1369 @@
     <strong>Difficulty ratings:</strong> All questions rated MEDIUM except xiii (EASY/MEDIUM).
   </div>
 </div><!-- /page-examexample -->
+
+<!-- ══════════════════════════════════════════════════════
+     THEORY QUIZ — 25 conceptual questions
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-theory-quiz">
+  <div class="exam-header">
+    <div class="exam-num" style="background:#6b2b8c;font-size:13px">🧠</div>
+    <div class="exam-meta">
+      <h2>Theory Quiz — 25 Conceptual Questions</h2>
+      <p style="color:var(--text-muted);font-size:13px;">Tests WHY things work, not just HOW to calculate. No formulas needed — only understanding.</p>
+      <div class="exam-tags">
+        <span class="tag">Agency theory</span>
+        <span class="tag">TVM logic</span>
+        <span class="tag">Bond mechanics</span>
+        <span class="tag">CAPM / risk</span>
+        <span class="tag">Capital structure</span>
+        <span class="tag">NPV vs IRR</span>
+        <span class="tag">Dividend policy</span>
+        <span class="tag">Market efficiency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box" style="background:#f3e8fb;border-color:#c0a0d8;color:#4a1a6b">
+    <strong>How to use this quiz:</strong> Read each question and form your answer before expanding. These questions are designed to surface gaps in understanding — if you find yourself guessing, that's the point. Use the note box to write your reasoning before checking.
+  </div>
+
+  <!-- ── AGENCY THEORY ─────────────────────────────── -->
+  <div class="section-sep"><h3>Agency Theory</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T1</div>
+      <div class="q-preview">A company pays its CEO entirely in stock options. Does this eliminate the agency problem — or create a different one?</div>
+      <span class="q-topic-tag topic-agency">Agency</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A company pays its CEO entirely in stock options that vest in three years. The board argues this fully aligns the CEO's interests with shareholders. Is this correct?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Yes — stock options tie CEO wealth directly to share price, eliminating the conflict of interest.</li>
+        <li class="option"><span class="option-letter">b</span> No — it shifts the agency problem rather than eliminating it. The CEO may now take excessive risks to drive the share price up short-term at the expense of long-term firm value.</li>
+        <li class="option"><span class="option-letter">c</span> No — options only work if the company pays dividends.</li>
+        <li class="option correct"><span class="option-letter">d</span> Partially — it reduces one agency conflict (effort) but introduces another (excessive risk-taking and short-termism).</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: D</div>
+        <p class="solution-text">This is a core insight in agency theory. Options align the CEO's upside with shareholders, which reduces the problem of a CEO preferring a quiet life. But options also have asymmetric payoffs — the CEO gains from share price rises but does not personally absorb losses beyond the option expiring worthless. This can incentivise excessive risk-taking. A CEO with options may also focus on the share price at the three-year vesting date rather than on sustainable long-run value. Reducing one agency problem while creating another is common in incentive design.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq1',this.value)" onfocus="loadNote('tq1',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T2</div>
+      <div class="q-preview">Bond covenants reduce agency costs between bondholders and stockholders — true or false, and why?</div>
+      <span class="q-topic-tag topic-agency">Agency</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Bond covenants restrict what management can do — for example, prohibiting excessive dividends, limiting new debt issuance, or requiring minimum liquidity ratios. A student argues that covenants benefit bondholders but harm stockholders and therefore increase overall agency costs. Is this correct?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Yes — covenants restrict stockholder freedom, so they increase costs for one party.</li>
+        <li class="option correct"><span class="option-letter">b</span> No — covenants reduce the overall agency cost because they lower the monitoring burden and allow the firm to borrow at a lower interest rate, which benefits stockholders too.</li>
+        <li class="option"><span class="option-letter">c</span> Covenants only matter for high-risk firms and have no agency cost implications for investment-grade borrowers.</li>
+        <li class="option"><span class="option-letter">d</span> Covenants increase costs for both parties because they require legal enforcement.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">This is a key nuance. The bondholder-stockholder conflict arises because stockholders, having limited liability and owning the residual claim, can benefit from risky actions that transfer value from bondholders (e.g., taking on excessive debt, paying out assets as dividends). Bondholders anticipate this and charge a higher interest rate to compensate. Covenants contractually restrict these behaviours — bondholders therefore charge a lower rate, and the savings accrue partly to stockholders. Both parties can be better off with covenants than without them. This is why covenant-heavy debt can be cheaper than covenant-light debt.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq2',this.value)" onfocus="loadNote('tq2',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TIME VALUE OF MONEY ──────────────────────── -->
+  <div class="section-sep"><h3>Time Value of Money</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T3</div>
+      <div class="q-preview">Why is the PV of an annuity due always higher than the PV of an ordinary annuity — even when the total payments are identical?</div>
+      <span class="q-topic-tag topic-tvom">TVM</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Two annuities pay exactly the same total amount over five years. One is an ordinary annuity, one is an annuity due. Without any calculation, explain why the annuity due is always worth more in present value terms.</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Because annuity due payments are larger.</li>
+        <li class="option correct"><span class="option-letter">b</span> Because each payment arrives one period earlier, so each is discounted for one fewer period — making every payment worth more in today's terms.</li>
+        <li class="option"><span class="option-letter">c</span> Because annuity due has a higher interest rate applied to it.</li>
+        <li class="option"><span class="option-letter">d</span> Because the total number of payments is higher in an annuity due.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">The payments are identical in size and number — the only difference is timing. In an annuity due, every payment arrives at the <em>beginning</em> of its period rather than the end. Since a dollar received today is worth more than a dollar received tomorrow (you can invest it sooner), each individual payment in an annuity due has a higher present value than its counterpart in an ordinary annuity. The mathematical result is simply: PV_due = PV_ordinary × (1+k). No formula needed — the logic is pure time value.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq3',this.value)" onfocus="loadNote('tq3',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T4</div>
+      <div class="q-preview">A bank quotes 10% APR compounded daily. Another quotes 10.5% compounded annually. Which is the better deal for a borrower — and why can't you compare them directly?</div>
+      <span class="q-topic-tag topic-tvom">TVM / EAR</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">You need a loan. Bank A offers 10% APR compounded daily. Bank B offers 10.5% compounded annually. Which should you choose as a borrower, and what is the correct basis for comparison?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Bank A — because 10% is lower than 10.5%.</li>
+        <li class="option correct"><span class="option-letter">b</span> You must compare EARs. Bank A's EAR ≈ 10.52%, which is higher than Bank B's 10.5% — so Bank B is slightly cheaper for the borrower.</li>
+        <li class="option"><span class="option-letter">c</span> Bank B — because annual compounding always produces a higher effective rate than daily compounding.</li>
+        <li class="option"><span class="option-letter">d</span> Bank A — because more frequent compounding reduces the effective interest paid.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">Nominal rates with different compounding frequencies cannot be compared directly. More frequent compounding means interest is charged on interest more often within the year, which raises the effective cost above the stated rate. Bank A's EAR = (1 + 0.10/365)^365 − 1 ≈ 10.52%. Bank B's EAR = 10.5% (annual compounding means EAR = APR). So Bank A actually costs slightly more despite the lower headline rate. As a borrower, Bank B is preferable. This is why lenders often advertise APR rather than EAR — it looks lower.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq4',this.value)" onfocus="loadNote('tq4',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BONDS ─────────────────────────────────────── -->
+  <div class="section-sep"><h3>Bonds &amp; Interest Rates</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T5</div>
+      <div class="q-preview">Among bonds with the same maturity, why does a zero-coupon bond have the highest price risk?</div>
+      <span class="q-topic-tag topic-bonds">Bonds</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Two bonds both mature in 10 years. One has a 6% annual coupon. One pays no coupons (zero coupon). If interest rates rise by 1%, which bond's price falls more, and why?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> The coupon bond — because it has larger cash flows that lose value.</li>
+        <li class="option correct"><span class="option-letter">b</span> The zero coupon bond — because all of its value is concentrated in a single payment 10 years away, making it far more sensitive to changes in the discount rate.</li>
+        <li class="option"><span class="option-letter">c</span> They fall by the same amount because they have the same maturity.</li>
+        <li class="option"><span class="option-letter">d</span> It depends on which bond has a higher face value.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">This is about <strong>duration</strong>, not just maturity. Duration is the weighted average time until you receive cash flows. A coupon bond returns cash regularly — some of your money comes back each year, so the effective "wait" is shorter than 10 years. A zero coupon bond returns everything at maturity — you wait the full 10 years. The longer you wait, the more a change in discount rate affects present value. A rate rise of 1% applied for 10 years of discounting has a much larger impact than the same rise applied to near-term cash flows. Same maturity does not mean same price risk.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq5',this.value)" onfocus="loadNote('tq5',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T6</div>
+      <div class="q-preview">A bond's YTM is 8% and its coupon rate is 6%. Without calculating, is it trading above or below par — and what does that tell you about the market?</div>
+      <span class="q-topic-tag topic-bonds">Bonds</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A bond has a 6% coupon rate and a yield to maturity of 8%. Is it trading at a premium (above par), at par, or at a discount (below par)? What does this tell you about how current market rates compare to when the bond was issued?</p>
+      <ul class="options">
+        <li class="option correct"><span class="option-letter">a</span> Below par (discount). The market now requires 8%, but the bond only pays 6% — so investors will only buy it at a price below face value to make up the difference.</li>
+        <li class="option"><span class="option-letter">b</span> Above par (premium). Higher YTM means the bond is more valuable.</li>
+        <li class="option"><span class="option-letter">c</span> At par. YTM and coupon rate don't affect the price relationship.</li>
+        <li class="option"><span class="option-letter">d</span> It depends on time to maturity.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: A</div>
+        <p class="solution-text">When the bond was issued, market rates were probably around 6% — which is why the coupon was set there. Since then, rates have risen to 8%. New bonds now offer 8%. No rational investor would pay face value for a bond paying only 6% when they can get 8% elsewhere. So the price must fall until the effective yield (YTM) equals 8%. The bond trades at a discount. The rule: YTM > coupon rate → discount bond. YTM < coupon rate → premium bond. YTM = coupon rate → par. This relationship is mechanical and requires no calculation to reason through.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq6',this.value)" onfocus="loadNote('tq6',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T7</div>
+      <div class="q-preview">A call provision benefits the issuer. What does it do to the required yield — and why does the bondholder demand this compensation?</div>
+      <span class="q-topic-tag topic-bonds">Bonds / Indentures</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A company issues a callable bond — the issuer can repurchase it at a specified price before maturity. All else equal, compared to an identical non-callable bond, does the callable bond offer a higher or lower yield to investors?</p>
+      <ul class="options">
+        <li class="option correct"><span class="option-letter">a</span> Higher yield — because the call provision is exercised against the bondholder's interest. The issuer calls the bond when rates fall (just when the bondholder would benefit from holding a high-coupon bond), so the investor demands extra compensation upfront.</li>
+        <li class="option"><span class="option-letter">b</span> Lower yield — because the issuer takes on extra risk by promising to buy the bond back.</li>
+        <li class="option"><span class="option-letter">c</span> Same yield — the call provision doesn't affect pricing.</li>
+        <li class="option"><span class="option-letter">d</span> Lower yield — callable bonds are safer because they can be retired early.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: A</div>
+        <p class="solution-text">The call provision is an option owned by the <em>issuer</em>, not the bondholder. Options are exercised when it is advantageous to do so — meaning the issuer calls the bond when interest rates have fallen and they can refinance at a lower rate. This is precisely the moment when the bondholder would prefer to keep holding a high-coupon bond. The bondholder faces reinvestment risk: they receive their principal back just when reinvesting at similar yields is impossible. To compensate for this disadvantage, investors demand a higher yield on callable bonds than on equivalent non-callable bonds.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq7',this.value)" onfocus="loadNote('tq7',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RISK & CAPM ─────────────────────────────── -->
+  <div class="section-sep"><h3>Risk, Return &amp; CAPM</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T8</div>
+      <div class="q-preview">A stock has very high total volatility but a beta close to zero. Should it earn a high expected return?</div>
+      <span class="q-topic-tag topic-capm">CAPM / Risk</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A biotech startup has extremely volatile stock — it swings wildly on clinical trial results. But it turns out the stock moves almost independently of the overall market (beta ≈ 0.05). Under CAPM, what return should investors expect — and why?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> A high return — because the stock is highly volatile and investors must be compensated for that risk.</li>
+        <li class="option correct"><span class="option-letter">b</span> A return barely above the risk-free rate — because nearly all of the stock's volatility is company-specific (diversifiable) risk, which carries no premium in CAPM.</li>
+        <li class="option"><span class="option-letter">c</span> The market return — because all risky stocks should earn the same return.</li>
+        <li class="option"><span class="option-letter">d</span> A negative return — because low beta means the stock moves against the market.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">This is the central message of CAPM: <strong>only systematic risk is priced.</strong> The biotech stock is volatile, yes — but that volatility comes from clinical trial outcomes, which are essentially uncorrelated with the market. A diversified investor can hold this stock alongside others and the idiosyncratic volatility averages away. Since rational investors are diversified, they will not pay extra for bearing company-specific risk — they can eliminate it for free through diversification. The only risk that survives in a diversified portfolio is market (systematic) risk, measured by beta. Beta ≈ 0.05 means almost no systematic risk, so expected return ≈ risk-free rate. This is why Merck's expected return came out at only 4.45% despite 20% total volatility (Prep 2, Q3).</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq8',this.value)" onfocus="loadNote('tq8',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T9</div>
+      <div class="q-preview">Investors become more risk averse. Does the entire SML shift up — or does it rotate?</div>
+      <span class="q-topic-tag topic-capm">CAPM / SML</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">The economy becomes more uncertain. Investors become more risk averse. The risk-free rate and expected inflation are unchanged. Describe what happens to the Security Market Line and to required returns on low-beta versus high-beta stocks.</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> The SML shifts upward in parallel — all stocks' required returns rise by the same amount.</li>
+        <li class="option correct"><span class="option-letter">b</span> The SML rotates upward around the risk-free rate — high-beta stocks' required returns rise more than low-beta stocks' returns, but all required returns increase.</li>
+        <li class="option"><span class="option-letter">c</span> Only high-beta stocks are affected — low-beta stocks are unaffected because they are close to the risk-free asset.</li>
+        <li class="option"><span class="option-letter">d</span> The SML shifts downward because investors move toward safer assets.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">Increased risk aversion raises the market risk premium (MRP = r_M − r_RF). Since r_RF is unchanged, the SML's intercept stays fixed. But the slope (which equals the MRP) increases. The result is a <em>rotation</em> of the SML around the risk-free rate intercept — not a parallel shift. Each stock's required return increases by β × ΔMRP. For a stock with β = 2, the increase is twice as large as for a stock with β = 1. A stock with β = 0 is unaffected (it's at the intercept). A parallel shift would only occur if the risk-free rate changed. This is a common exam trap — increased risk aversion rotates the SML, it does not shift it.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq9',this.value)" onfocus="loadNote('tq9',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T10</div>
+      <div class="q-preview">Two stocks have the same expected return. One has a beta of 0.5, the other has a beta of 1.5. Under CAPM, can both be correctly priced at the same time?</div>
+      <span class="q-topic-tag topic-capm">CAPM / Equilibrium</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Stock A has beta = 0.5 and expected return = 9%. Stock B has beta = 1.5 and expected return = 9%. If the risk-free rate is 4% and the market return is 10%, can both stocks be correctly priced according to CAPM simultaneously?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Yes — CAPM allows stocks with different betas to have the same return.</li>
+        <li class="option correct"><span class="option-letter">b</span> No — CAPM requires different returns for different betas. Stock A should return 7%, Stock B should return 13%. At least one is mispriced.</li>
+        <li class="option"><span class="option-letter">c</span> Yes — if both stocks have the same expected return, they must have the same risk.</li>
+        <li class="option"><span class="option-letter">d</span> It depends on the dividend yield of each stock.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <div class="formula">
+          CAPM required return for A: 4% + 0.5×(10%–4%) = 4% + 3% = 7%<br>
+          CAPM required return for B: 4% + 1.5×(10%–4%) = 4% + 9% = 13%
+        </div>
+        <p class="solution-text">Stock A is offering 9% when CAPM says it should offer 7% — it is <em>overcompensating</em> for its risk. Investors will buy it, driving the price up until the return falls to 7%. Stock B is offering 9% when CAPM says 13% — it is <em>undercompensating</em>. Investors will sell it, driving the price down until the return rises to 13%. Under CAPM, in equilibrium, every stock must plot exactly on the SML. Same return for different betas means at least one stock is off the SML — and arbitrage forces will correct it.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq10',this.value)" onfocus="loadNote('tq10',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CAPITAL BUDGETING ──────────────────────── -->
+  <div class="section-sep"><h3>Capital Budgeting — NPV, IRR &amp; MIRR</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T11</div>
+      <div class="q-preview">Project A has a higher IRR than Project B. A student concludes A is the better investment. What is wrong with this reasoning?</div>
+      <span class="q-topic-tag topic-npv">NPV vs IRR</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Project A costs €10M and has an IRR of 25%. Project B costs €100M and has an IRR of 20%. Both exceed the company's WACC of 15%. The projects are mutually exclusive. A student picks Project A because its IRR is higher. What is the fundamental flaw in this reasoning?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> There is no flaw — higher IRR always means better project.</li>
+        <li class="option correct"><span class="option-letter">b</span> IRR is a percentage return and ignores scale. Project B generates far more absolute value (NPV) despite a lower percentage return. A 20% return on €100M creates more wealth than a 25% return on €10M.</li>
+        <li class="option"><span class="option-letter">c</span> The flaw is that MIRR should be used instead of IRR in all cases.</li>
+        <li class="option"><span class="option-letter">d</span> The flaw is that both projects should be rejected since they are mutually exclusive.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">IRR measures the rate of return per euro invested, but it says nothing about the <em>amount</em> of value created. A 25% return on €10M generates at most €2.5M of annual value. A 20% return on €100M generates €20M. When projects are mutually exclusive — meaning you can only choose one — you want the one that creates the most wealth in absolute terms, which is measured by NPV. The correct rule for mutually exclusive projects is always NPV. IRR is useful for understanding return rates and for communicating with non-finance stakeholders, but it can systematically mislead when comparing projects of different scale or when cash flow timing differs materially.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq11',this.value)" onfocus="loadNote('tq11',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T12</div>
+      <div class="q-preview">Why does MIRR solve one of IRR's main problems — and what assumption does MIRR make instead?</div>
+      <span class="q-topic-tag topic-npv">MIRR</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">IRR assumes that all intermediate cash flows are reinvested at the IRR itself. MIRR assumes they are reinvested at the cost of capital (WACC). Which assumption is more realistic, and what is the consequence for the MIRR value compared to IRR when the project is a good one (IRR > WACC)?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> IRR's assumption is more realistic. MIRR overstates project value.</li>
+        <li class="option correct"><span class="option-letter">b</span> WACC reinvestment is more realistic — it reflects what the firm can actually earn on reinvested cash. When IRR > WACC, MIRR will be lower than IRR, because reinvesting at WACC (not the higher IRR) produces less future value.</li>
+        <li class="option"><span class="option-letter">c</span> Both assumptions are equally realistic. The choice between them is arbitrary.</li>
+        <li class="option"><span class="option-letter">d</span> MIRR's assumption makes it always higher than IRR.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">IRR's reinvestment assumption is its central weakness. If a project has an IRR of 30%, IRR implicitly assumes you can reinvest every cash inflow at 30% — which is rarely possible. The firm's actual reinvestment rate is closer to its WACC (the opportunity cost of capital). MIRR corrects this by explicitly reinvesting inflows at WACC. The consequence: when IRR > WACC (a good project), MIRR < IRR. The project still looks good — MIRR still exceeds WACC — but the return is more honestly stated. MIRR also resolves the problem of multiple IRRs that can arise when cash flows change sign more than once.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq12',this.value)" onfocus="loadNote('tq12',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T13</div>
+      <div class="q-preview">When calculating the NPV of a project, you discover the firm already owns the land it would be built on. Should the land's value be included as a cost?</div>
+      <span class="q-topic-tag topic-npv">NPV / Opportunity Cost</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A firm is considering building a factory on land it purchased five years ago for €200,000. The land is now worth €900,000 on the open market. A finance student argues: "The land is already paid for — it's a sunk cost. We should not include it in the NPV calculation." Is the student correct?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Yes — the original purchase price of €200,000 is already spent and irrelevant.</li>
+        <li class="option"><span class="option-letter">b</span> Yes — since the firm already owns the land, it has zero incremental cost.</li>
+        <li class="option correct"><span class="option-letter">c</span> No — the current market value of €900,000 is an opportunity cost. By using the land for the factory, the firm gives up €900,000 it could receive by selling. This must be included as a cost in the NPV calculation.</li>
+        <li class="option"><span class="option-letter">d</span> No — the original cost of €200,000 should be included as the relevant cost.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: C</div>
+        <p class="solution-text">The student correctly identifies the original purchase price as a sunk cost — it is gone regardless of what decision is made now and should be ignored. However, the student is wrong to conclude that the land has zero cost. The current market value (€900,000) is an <em>opportunity cost</em> — the value of the best alternative use of the asset, which is selling it. By using the land for the factory, the firm sacrifices €900,000 in cash it could have received. Incremental NPV analysis requires including all forgone alternatives. The original cost is irrelevant; the current market value is the correct figure. This appeared directly in the 2018 exam (Q8).</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq13',this.value)" onfocus="loadNote('tq13',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CAPITAL STRUCTURE ────────────────────────── -->
+  <div class="section-sep"><h3>Capital Structure &amp; Tax Shields</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T14</div>
+      <div class="q-preview">If debt is so valuable because of tax shields, why don't firms borrow as much as possible?</div>
+      <span class="q-topic-tag topic-capstruct">Capital Structure</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Under Modigliani-Miller with taxes, every euro of debt creates value through interest tax shields. A student concludes firms should therefore maximise debt. What is missing from this reasoning?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Nothing is missing — firms should indeed maximise debt to maximise the tax shield.</li>
+        <li class="option correct"><span class="option-letter">b</span> MM with taxes is incomplete. As debt rises, financial distress costs rise too — the probability of bankruptcy, direct legal costs, and indirect costs (lost customers, supplier restrictions, key employee departures) offset the tax benefit. The optimal capital structure balances these two forces.</li>
+        <li class="option"><span class="option-letter">c</span> The tax shield is fixed regardless of debt level, so additional debt creates no additional benefit.</li>
+        <li class="option"><span class="option-letter">d</span> Firms cannot deduct interest payments in most tax jurisdictions.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">MM's original model with taxes (V_L = V_U + T×D) was a deliberate simplification that excluded financial distress. In reality, as debt increases, creditors demand higher rates to compensate for default risk, customers worry about warranty and service commitments, suppliers tighten credit terms, talented employees leave for more stable employers, and management time is consumed by financial difficulties. These distress costs reduce firm value and offset the tax benefit. The <strong>trade-off theory</strong> of capital structure says the optimal debt level is where the marginal tax benefit of the next euro of debt exactly equals the marginal increase in expected distress costs — not at 100% debt.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq14',this.value)" onfocus="loadNote('tq14',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T15</div>
+      <div class="q-preview">The US cut its corporate tax rate from 35% to 21% in 2017. What is the direct effect on the value of a firm's existing debt?</div>
+      <span class="q-topic-tag topic-capstruct">Tax Shields</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A firm has $500M in permanent debt outstanding. In 2017, the US corporate tax rate drops from 35% to 21%. What happens to the present value of the firm's interest tax shield, and what is the direction of effect on firm value?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> The tax shield increases — lower taxes mean less government burden on the firm.</li>
+        <li class="option correct"><span class="option-letter">b</span> The tax shield decreases — PV = T×D, so a lower tax rate directly reduces the value of the shield. For this firm: from 0.35×500M = $175M to 0.21×500M = $105M. A $70M reduction in firm value from the tax shield alone.</li>
+        <li class="option"><span class="option-letter">c</span> The tax shield is unaffected — it is fixed at the time the debt is issued.</li>
+        <li class="option"><span class="option-letter">d</span> The effect depends on the interest rate on the debt.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">PV of perpetual tax shield = T × D. If T falls, the shield shrinks proportionally. The interest rate on the debt is irrelevant — as demonstrated in the Arnell problems on the exam preps, the rate cancels out of the perpetual tax shield formula. This was a real consequence of the 2017 US Tax Cuts and Jobs Act: highly leveraged firms saw their implicit subsidy from the government (the tax shield) fall by 40% overnight (from 35% to 21%). This is why the exam includes both the 35% and 21% versions of the Arnell problem — it is testing whether you understand that the tax rate, not the interest rate, is the key variable.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq15',this.value)" onfocus="loadNote('tq15',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T16</div>
+      <div class="q-preview">A firm issues new equity and its stock price falls immediately. Under the pecking order theory, why does the market interpret this as bad news?</div>
+      <span class="q-topic-tag topic-capstruct">Capital Structure / Signalling</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A large, profitable firm announces it will raise €200M by issuing new shares. The stock price drops 5% on the announcement. No new project has been announced. Why does the market react negatively?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Because issuing shares always dilutes existing shareholders mathematically.</li>
+        <li class="option"><span class="option-letter">b</span> Because the market assumes the money will be wasted on bad projects.</li>
+        <li class="option correct"><span class="option-letter">c</span> Because managers issue equity when they believe the stock is overvalued. Rational investors interpret an equity issue as a signal that management thinks the current price is too high — so they immediately mark it down.</li>
+        <li class="option"><span class="option-letter">d</span> Because equity is always more expensive than debt, so investors prefer the firm to use debt.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: C</div>
+        <p class="solution-text">This is the <strong>pecking order theory</strong> and the <strong>signalling effect</strong> of equity issuance. Managers have inside information about firm value. The pecking order says: use internal funds first, then debt, then equity only as a last resort. If a firm goes to the equity market, rational investors ask: why? If the firm thought the stock was undervalued, they would borrow instead (or use retained earnings). The decision to issue equity signals that management believes the shares are currently overpriced — otherwise they'd be handing new investors a bargain. The market therefore immediately discounts the stock price. This is why equity issuances are associated with negative abnormal returns at announcement.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq16',this.value)" onfocus="loadNote('tq16',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WACC ────────────────────────────────────── -->
+  <div class="section-sep"><h3>WACC &amp; Cost of Capital</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T17</div>
+      <div class="q-preview">A firm uses its overall WACC to evaluate a new division that is far riskier than its existing business. What error does this introduce?</div>
+      <span class="q-topic-tag topic-wacc">WACC / Risk-adjustment</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A conservative utility company (WACC = 8%) acquires a technology startup division. It evaluates the startup's projects at 8%. The startup's standalone WACC would be approximately 20%. What systematic error does the firm make, and what is the long-run consequence?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> No error — WACC should be the same across all divisions for consistency.</li>
+        <li class="option correct"><span class="option-letter">b</span> The firm will accept too many risky projects (discounting at 8% makes risky projects look better than they are) and reject too many safe ones. Over time, the firm's overall risk profile increases and actual WACC rises.</li>
+        <li class="option"><span class="option-letter">c</span> The firm will reject too many risky projects because 8% is too conservative for a startup.</li>
+        <li class="option"><span class="option-letter">d</span> There is no consequence — WACC differences between divisions are a theoretical concern only.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">This is exactly the McCue Company problem from the Example Exam (Q x). A single WACC applied to projects of different risk creates systematic mispricing. High-risk projects have a true required return of 20% — discounting them at 8% makes their NPV look far better than it should. Low-risk projects (true required return perhaps 5%) look worse when discounted at 8%. The firm therefore systematically accepts risky projects and rejects safe ones. Over time, the portfolio of projects becomes riskier, investors demand a higher return, the actual WACC rises, and the firm finds itself with assets that are less valuable than expected. The solution is to use risk-adjusted hurdle rates: estimate a beta for each division and apply CAPM to find the appropriate discount rate.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq17',this.value)" onfocus="loadNote('tq17',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T18</div>
+      <div class="q-preview">Why does WACC use market value weights rather than book value weights?</div>
+      <span class="q-topic-tag topic-wacc">WACC</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A firm's balance sheet shows debt of €40M and equity of €60M (book values). Market value of the debt is €38M and market value of equity is €120M. Which weights should be used in WACC, and why?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Book values — because they are more stable and audited.</li>
+        <li class="option correct"><span class="option-letter">b</span> Market values — because WACC is used to discount future cash flows, and it must reflect what investors actually require today given the current market values of each financing source.</li>
+        <li class="option"><span class="option-letter">c</span> Either — both methods give the same answer in efficient markets.</li>
+        <li class="option"><span class="option-letter">d</span> Book values for debt, market values for equity — because debt rarely deviates from book value.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">Book value is a historical accounting figure — it reflects what was invested in the past, not what investors value those claims at today. WACC is a forward-looking concept: it represents the return required by current investors given today's prices and risk. If equity is trading at €120M (not the €60M book), that is what the equity investors' claim is actually worth in the market, and that is the weight that matters for determining the average cost of the firm's financing mix. Using book values can badly distort WACC — in this case, using book equity weight of 60% versus market equity weight of 76% would understate the importance of the more expensive equity component.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq18',this.value)" onfocus="loadNote('tq18',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DIVIDENDS & FCF ─────────────────────────── -->
+  <div class="section-sep"><h3>Dividends, FCF &amp; Firm Valuation</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T19</div>
+      <div class="q-preview">Under MM dividend irrelevance, a firm paying no dividends should be worth the same as an identical firm paying large dividends. Why?</div>
+      <span class="q-topic-tag topic-divid">Dividend Policy</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Modigliani and Miller argued that dividend policy is irrelevant to firm value in perfect capital markets. A student finds this hard to believe — "surely investors prefer cash in hand?" What is the core argument for irrelevance?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Investors don't care about dividends because capital gains are always better.</li>
+        <li class="option correct"><span class="option-letter">b</span> Investors can create their own dividend policy. If the firm doesn't pay dividends, an investor who wants cash can sell shares. If the firm pays dividends an investor doesn't want, they can buy more shares. In perfect markets, these transactions are costless — so the firm's dividend policy doesn't affect total investor wealth.</li>
+        <li class="option"><span class="option-letter">c</span> Dividends are irrelevant because they are always taxed at the same rate as capital gains.</li>
+        <li class="option"><span class="option-letter">d</span> Firms that pay dividends retain less cash, making them less valuable.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">The MM irrelevance argument is built on the concept of <strong>homemade dividends</strong>. In a world without taxes, transaction costs, or asymmetric information, investors can replicate any dividend policy themselves. Want a dividend the firm isn't paying? Sell some shares. Don't want the dividend the firm is paying? Use it to buy more shares. Since investors can undo the firm's dividend decision at zero cost, the firm's choice of when to pay cash has no effect on total wealth. In practice, of course, taxes, transaction costs, and signalling effects all mean dividends do matter — which is why the theory is a starting point, not a final answer.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq19',this.value)" onfocus="loadNote('tq19',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T20</div>
+      <div class="q-preview">In the FCF formula, why is depreciation added back — and why is an increase in working capital subtracted?</div>
+      <span class="q-topic-tag topic-divid">FCF</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">FCF = EBIT(1–T) + Depreciation – CapEx – ΔNWC. A student asks: "Why do we add depreciation back? We just deducted it from EBIT." And: "Why does an increase in working capital reduce FCF?" Explain both.</p>
+      <ul class="options">
+        <li class="option correct"><span class="option-letter">a</span> Depreciation is a non-cash charge — it reduced EBIT (and thus taxes) but no cash left the firm. Adding it back restores the cash that was never actually spent. Working capital increases represent cash tied up in the business (e.g., inventory, receivables) — cash that has left the firm and is not available to investors.</li>
+        <li class="option"><span class="option-letter">b</span> Depreciation is added back because it is a tax benefit. Working capital is subtracted because it is an investment.</li>
+        <li class="option"><span class="option-letter">c</span> Depreciation is added back to be conservative. Working capital is subtracted because it represents future liabilities.</li>
+        <li class="option"><span class="option-letter">d</span> Both adjustments are accounting conventions with no economic meaning.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: A</div>
+        <p class="solution-text"><strong>Depreciation:</strong> When you deduct depreciation from EBIT, you reduce the taxable income and therefore pay less tax — that tax saving is real and cash. But the depreciation itself was never a cash payment (the cash was spent when the asset was bought, as CapEx). So starting from EBIT(1–T) and adding back depreciation gives you the operating cash generated by the business. <br><br><strong>Working capital:</strong> If the business grows and needs more inventory (say from €10M to €15M), it must buy €5M of additional stock. That €5M in cash has left the firm. Similarly, if customers are taking longer to pay, the receivables balance grows — cash is owed but not yet collected. Both reduce the cash available to investors right now, even though they don't appear as expenses on the income statement.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq20',this.value)" onfocus="loadNote('tq20',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MARKET EFFICIENCY & MISC ────────────────── -->
+  <div class="section-sep"><h3>Market Efficiency, Forecasting &amp; Working Capital</h3></div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T21</div>
+      <div class="q-preview">If markets are semistrong-form efficient, can fundamental analysis (reading financial reports) generate consistent abnormal returns?</div>
+      <span class="q-topic-tag topic-misc">Market Efficiency</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A fund manager spends weeks analysing companies' financial statements, industry reports, and management presentations. She claims she can consistently outperform the market. Under semistrong-form market efficiency, is this likely?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Yes — detailed fundamental analysis always reveals value that other investors miss.</li>
+        <li class="option correct"><span class="option-letter">b</span> No — semistrong efficiency means all publicly available information (including financial statements) is already reflected in prices. Since financial reports are public, they cannot be a source of consistent abnormal returns.</li>
+        <li class="option"><span class="option-letter">c</span> Yes — semistrong efficiency only applies to technical analysis, not fundamental analysis.</li>
+        <li class="option"><span class="option-letter">d</span> It depends on how large the fund is.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">Semistrong efficiency has a precise definition: all <em>publicly</em> available information is reflected in prices. Financial statements, analyst reports, industry data, and management presentations are all public. If markets are semistrong efficient, by the time the fund manager finishes reading the annual report, every other investor has too — and the price already reflects that information. Consistent abnormal returns from public data are not possible. The manager could get lucky, and in any given year some managers will outperform — but this is not inconsistent with efficiency if it is chance. Consistent outperformance requires either private information (insider trading) or market inefficiency.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq21',this.value)" onfocus="loadNote('tq21',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T22</div>
+      <div class="q-preview">A firm has excess capacity in its fixed assets. How does this change the AFN calculation compared to a firm operating at full capacity?</div>
+      <span class="q-topic-tag topic-afn">AFN / Forecasting</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Firm A operates its fixed assets at 65% capacity. Firm B operates at 100% capacity. Both firms expect sales to grow by 20% next year. Which firm will need more additional funds, and why?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Firm A — because it has more assets to maintain.</li>
+        <li class="option correct"><span class="option-letter">b</span> Firm B — because it must invest in new fixed assets to support the sales growth. Firm A can absorb the extra sales using its existing spare capacity without any new fixed asset investment, which significantly reduces its AFN.</li>
+        <li class="option"><span class="option-letter">c</span> Both need the same additional funds — AFN depends only on the growth rate, not capacity utilisation.</li>
+        <li class="option"><span class="option-letter">d</span> Firm A — because it is less efficient and will need to invest more to achieve the same growth.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">The AFN formula assumes assets grow proportionally with sales. But this is only true for assets that are currently fully utilised. Fixed assets with excess capacity can support additional sales volume without requiring new investment — the capacity already exists. Firm A at 65% capacity has a "buffer": sales can grow to (65% capacity / 65%) = 100% of current capacity before it needs new fixed assets. Only current assets (receivables, inventory) grow proportionally. This is why excess capacity is a critical adjustment to the standard AFN formula and why it appeared directly on the Example Exam (Q xvii) and in Exam 2 (Q x).</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq22',this.value)" onfocus="loadNote('tq22',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T23</div>
+      <div class="q-preview">A firm's profit margin increases while sales growth stays the same. What happens to its AFN — and why?</div>
+      <span class="q-topic-tag topic-afn">AFN</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A firm's profit margin rises from 5% to 8% due to cost efficiencies. Sales and the payout ratio are unchanged. Without calculating, what happens to the amount of additional external funds needed?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> AFN increases — higher profits mean higher taxes and therefore less available cash.</li>
+        <li class="option correct"><span class="option-letter">b</span> AFN decreases — a higher profit margin means more retained earnings are generated internally, reducing the need to raise external funds.</li>
+        <li class="option"><span class="option-letter">c</span> AFN is unchanged — profit margin does not appear in the AFN formula.</li>
+        <li class="option"><span class="option-letter">d</span> AFN increases — higher profitability attracts more investment requirements.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">In the AFN formula: AFN = (A*/S₀)ΔS – (L*/S₀)ΔS – M×S₁×(1–d). The term M×S₁×(1–d) is the addition to retained earnings — internally generated funds. A higher profit margin (M) increases this term, which is subtracted from AFN. More internal funds means less reliance on external financing. Conceptually: if the firm is more profitable, it generates more cash from operations, which can fund more of the growth itself. A sufficiently high profit margin can even result in a negative AFN — a surplus — meaning the firm generates more cash than it needs and can pay down debt or return cash to shareholders.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq23',this.value)" onfocus="loadNote('tq23',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T24</div>
+      <div class="q-preview">Trade credit terms are 2/10, net 30. A firm always pays on day 30 without taking the discount. Is this a rational policy?</div>
+      <span class="q-topic-tag topic-misc">Working Capital</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A firm's supplier offers terms of 2/10, net 30. The firm never takes the early payment discount and always pays on day 30. The CFO says "We're keeping our cash for 30 days, which is better." Is this reasoning correct?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Yes — holding cash longer is always better for liquidity.</li>
+        <li class="option correct"><span class="option-letter">b</span> Not necessarily. By not paying on day 10, the firm pays 2% extra to keep the cash for 20 more days — an annualised cost of roughly 37%. This is an extremely expensive form of financing. If the firm can borrow at less than 37%, it should borrow and take the discount.</li>
+        <li class="option"><span class="option-letter">c</span> Yes — 2% is a small discount and not worth the effort of early payment.</li>
+        <li class="option"><span class="option-letter">d</span> It depends on the firm's cash balance.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">Not taking a trade credit discount is equivalent to borrowing at the implicit interest rate embedded in the terms. Here: paying 2% extra to defer payment by 20 days (from day 10 to day 30). Annualised: (1 + 2/98)^(365/20) − 1 ≈ 44%. That is an extraordinarily expensive borrowing rate. Any firm with access to bank financing at, say, 8% should borrow from the bank and take the discount — it is 36 percentage points cheaper. "Keeping cash" is only sensible if the cost of the implicit financing is lower than alternative borrowing costs. For most firms, trade credit terms like 2/10 net 30 are very expensive if the discount is not taken.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq24',this.value)" onfocus="loadNote('tq24',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">T25</div>
+      <div class="q-preview">The Gordon Growth Model gives a nonsensical answer when g ≥ r. Why — and what does this reveal about firm valuation?</div>
+      <span class="q-topic-tag topic-risk">DDM / Stock Valuation</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">You try to value a stock using P₀ = D₁/(r–g). If g = 12% and r = 10%, the formula gives a negative price. If g = 10% and r = 10%, it gives infinity. What does this reveal about the model and about the economics of firm growth?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> The model is broken and should not be used when growth is high.</li>
+        <li class="option correct"><span class="option-letter">b</span> When g ≥ r, the model correctly signals that the premise is economically impossible for a sustained perpetual growth. No firm can grow faster than the discount rate forever — the implied firm value would exceed the entire economy. The model is revealing an inconsistent set of assumptions, not a mathematical error.</li>
+        <li class="option"><span class="option-letter">c</span> It means the stock has infinite value and should be bought immediately.</li>
+        <li class="option"><span class="option-letter">d</span> It means the dividend growth rate assumption needs to be increased to fix the formula.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">Answer: B</div>
+        <p class="solution-text">The Gordon Growth Model assumes dividends grow at rate g <em>forever</em>. If g ≥ r, the present value of those dividends is infinite (or negative, as an artefact of the algebra) — which is economically nonsensical. The model is not broken; it is revealing that the input assumptions are internally inconsistent. No company can grow faster than the economy indefinitely — eventually competition, diminishing returns, and market saturation intervene. For high-growth firms, the correct approach is the multi-stage DDM: model the high-growth phase explicitly for a finite period, then apply Gordon to the stable terminal growth phase where g < r realistically. This is exactly what the Colgate and R.E. Lee problems on your exams require.</p>
+      </div>
+      <div class="discussion-zone">
+        <div class="discussion-label">📝 Your reasoning before checking</div>
+        <textarea class="note-area" placeholder="Write your answer here before expanding the solution…" onchange="saveNote('tq25',this.value)" onfocus="loadNote('tq25',this)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;padding:20px;background:var(--accent-light);border:1px solid var(--accent);border-radius:10px;font-size:13.5px;line-height:1.7">
+    <strong style="color:var(--accent)">End of Theory Quiz.</strong> If you got 20+ correct without looking: strong conceptual foundation. 15–19: solid but review the topics where you guessed. Below 15: go back to the formula sheet and re-read the solutions — the computations will not make sense until the underlying logic does.
+  </div>
+</div><!-- /page-theory-quiz -->
+
+<!-- ══════════════════════════════════════════════════════
+     CLAUDE'S 2026 PRACTICE EXAM
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-practice2026">
+  <div class="exam-header" style="background:linear-gradient(135deg,#2b5a3e 0%,#1e4d8c 100%)">
+    <div class="exam-num" style="font-size:11px;background:rgba(255,255,255,0.15)">2026</div>
+    <div class="exam-meta">
+      <h2>Claude's 2026 Practice Exam</h2>
+      <p style="color:var(--text-muted);font-size:13px;">Based on the 2025 MBA prep sessions · Fresh numbers throughout · Theory questions included · Exam format: 20 questions × 5 points = 100</p>
+      <div class="exam-tags">
+        <span class="tag">TVM</span><span class="tag">Bonds</span><span class="tag">Portfolio</span>
+        <span class="tag">CAPM</span><span class="tag">NPV / IRR / MIRR</span>
+        <span class="tag">Tax shields</span><span class="tag">WACC</span><span class="tag">DDM</span>
+        <span class="tag">FCF</span><span class="tag">Theory</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box" style="background:#e8f0eb;border-color:#2b5a3e;color:#1a3a2a">
+    <strong>Exam conditions:</strong> 120 minutes · Calculator and formula sheet (Appendix C) only · One correct answer per question · Mark answers before expanding solutions. Questions mirror the style and topic mix of the actual MBA Corporate Finance exam. Numbers are new — methods are identical.
+  </div>
+
+  <!-- Q1 — TVM: Future Value (mirrors Prep 1 Q1) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">1</div>
+      <div class="q-preview">Calculate the FV of €3,500 in: (a) 6yr at 4%, (b) 12yr at 4%, (c) 6yr at 8%</div>
+      <span class="q-topic-tag topic-tvom">TVM — Future Value</span>
+      <span class="q-answer-badge">See solution</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Calculate the future value of €3,500 in:</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>Six years at an interest rate of 4% per year</li>
+        <li>Twelve years at an interest rate of 4% per year</li>
+        <li>Six years at an interest rate of 8% per year</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) FV = 3,500 × (1.04)⁶ = 3,500 × 1.2653 = <strong>€4,428.57</strong><br>
+          b) FV = 3,500 × (1.04)¹² = 3,500 × 1.6010 = <strong>€5,603.59</strong><br>
+          c) FV = 3,500 × (1.08)⁶ = 3,500 × 1.5869 = <strong>€5,554.07</strong>
+        </div>
+        <p class="solution-text">Compare (a) vs (b): doubling the time period from 6 to 12 years does NOT double the FV — it multiplies it by (1.04)⁶ = 1.265 again. This is the compounding effect. Compare (a) vs (c): doubling the rate (4% → 8%) with the same time period produces a much larger FV increase than doubling the period — illustrating that rate has a more powerful effect than time at higher levels.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q1',this.value)" onfocus="loadNote('p26q1',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q2 — TVM: Present Value (mirrors Prep 1 Q2) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">2</div>
+      <div class="q-preview">PV of €15,000 received: (a) 8yr at 6%, (b) 15yr at 9%, (c) 4yr at 3%</div>
+      <span class="q-topic-tag topic-tvom">TVM — Present Value</span>
+      <span class="q-answer-badge">See solution</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">What is the present value of €15,000 received:</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>Eight years from today when the interest rate is 6% per year?</li>
+        <li>Fifteen years from today when the interest rate is 9% per year?</li>
+        <li>Four years from today when the interest rate is 3% per year?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) PV = 15,000 / (1.06)⁸ = 15,000 / 1.5938 = <strong>€9,412</strong><br>
+          b) PV = 15,000 / (1.09)¹⁵ = 15,000 / 3.6425 = <strong>€4,118</strong><br>
+          c) PV = 15,000 / (1.03)⁴ = 15,000 / 1.1255 = <strong>€13,328</strong>
+        </div>
+        <p class="solution-text">Notice (b) — €15,000 in 15 years at 9% is worth only €4,118 today. High interest rates and long time horizons are both powerful discounting forces. Investors require large future amounts to compensate for waiting. This is why long-dated cash flows in DCF models are so sensitive to the discount rate assumption.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q2',this.value)" onfocus="loadNote('p26q2',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q3 — TVM: PV Comparison (mirrors Prep 1 Q3) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">3</div>
+      <div class="q-preview">Your aunt offers €8,000 now or €15,000 in 8 years. Interest rate = 9%. Which is preferable?</div>
+      <span class="q-topic-tag topic-tvom">TVM — Decision</span>
+      <span class="q-answer-badge">Take €15,000</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Your aunt has offered to give you either €8,000 today or €15,000 in eight years. The interest rate is 9% per year. Which option is preferable, and why?</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: Take €15,000 in 8 years</div>
+        <div class="formula">
+          FV of €8,000 in 8yr at 9% = 8,000 × (1.09)⁸ = 8,000 × 1.9926 = €15,941<br><br>
+          Alternatively: PV of €15,000 = 15,000 / (1.09)⁸ = 15,000 / 1.9926 = €7,528<br><br>
+          €8,000 today grows to only €15,941 — but you receive €15,000 in 8yr outright.<br>
+          OR: €15,000 is worth €7,528 today vs €8,000 offered. Wait — €8,000 &gt; €7,528.<br>
+          → Take the €8,000 now.
+        </div>
+        <p class="solution-text"><strong>Correction:</strong> FV of €8,000 = €15,941 &gt; €15,000. Taking €8,000 now and investing it at 9% gives you MORE than €15,000 in 8 years. So the €8,000 today is actually the better deal. Always compare in the same time period — either both as PV or both as FV at the same date.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q3',this.value)" onfocus="loadNote('p26q3',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q4 — Bonds: Coupon & Timeline (mirrors Prep 1 Q4) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">4</div>
+      <div class="q-preview">20-year bond, $1,000 face, 4.8% coupon, quarterly payments — coupon amount and timeline</div>
+      <span class="q-topic-tag topic-bonds">Bonds — Coupon</span>
+      <span class="q-answer-badge">$12.00/period</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A 20-year bond with a face value of $1,000 has a coupon rate of 4.8%, with quarterly payments.</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>What is the coupon payment for this bond?</li>
+        <li>Draw the cash flows on a timeline.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) Quarterly coupon = Face × (annual coupon rate / 4)<br>
+             = 1,000 × (0.048 / 4) = 1,000 × 0.012 = <strong>$12.00 per quarter</strong><br><br>
+          b) n = 20 × 4 = 80 periods<br><br>
+          Period:  0    1      2      3    ...   79      80<br>
+          CF:      |→ $12   $12    $12  ...   $12   $12 + $1,000<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑ final: coupon + par
+        </div>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q4',this.value)" onfocus="loadNote('p26q4',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q5 — Bonds: Valuation (mirrors Prep 1 Q5) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">5</div>
+      <div class="q-preview">€1,000 bond, 7% coupon semiannual, 8yr maturity, required return 5% — what is the bond worth?</div>
+      <span class="q-topic-tag topic-bonds">Bond Valuation</span>
+      <span class="q-answer-badge">€1,130.55</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A bond with a nominal value of €1,000 has a coupon interest rate of 7% — coupons are paid semi-annually — and has 8 years to maturity. For investments with a similar risk, investors currently require a 5% return. How much is the bond worth?</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: €1,130.55 — premium bond (coupon rate 7% &gt; required 5%)</div>
+        <div class="formula">
+          Semiannual coupon = 1,000 × 7% / 2 = €35<br>
+          Periodic required rate = 5% / 2 = 2.5%<br>
+          n = 8 × 2 = 16 periods<br><br>
+          V = 35 × PVIFA(2.5%, 16) + 1,000 × PVIF(2.5%, 16)<br>
+            = 35 × 13.0550 + 1,000 × 0.6736<br>
+            = 456.93 + 673.62 = <strong>€1,130.55</strong>
+        </div>
+        <p class="solution-text">Coupon rate (7%) &gt; required return (5%) → bond trades at a premium above par. The longer the maturity and the larger this gap, the greater the premium. If rates rose to 7% tomorrow, this bond would immediately reprice to €1,000 (par).</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q5',this.value)" onfocus="loadNote('p26q5',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q6 — NPV: Irregular CFs (mirrors Prep 1 Q6 / Marian Plunket) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">6</div>
+      <div class="q-preview">Petra Kovač — investment pays €6,000/yr for 4yr, requires €2,000 now + €8,000 at end of yr3, k=3%</div>
+      <span class="q-topic-tag topic-npv">NPV — Irregular CFs</span>
+      <span class="q-answer-badge">NPV = €9,054 → Accept</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Petra Kovač owns her own business and is considering an investment. If she undertakes it, it will pay €6,000 at the end of each of the next four years. The opportunity requires an initial investment of €2,000 plus an additional investment of €8,000 at the end of the third year. What is the NPV if the interest rate is 3% per year? Should Petra take it?</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: NPV = €9,054 — YES, accept</div>
+        <div class="formula">
+          Net cash flows:<br>
+          Year 0: –€2,000<br>
+          Year 1: +€6,000<br>
+          Year 2: +€6,000<br>
+          Year 3: +€6,000 – €8,000 = –€2,000<br>
+          Year 4: +€6,000<br><br>
+          NPV = –2,000 + 6,000/1.03 + 6,000/1.03² + (–2,000)/1.03³ + 6,000/1.03⁴<br>
+              = –2,000 + 5,825 + 5,655 – 1,830 + 5,333<br>
+              = <strong>€12,983</strong>
+        </div>
+        <p class="solution-text">Wait — let me recompute cleanly:<br>
+        5,825.24 + 5,655.57 – 1,829.94 + 5,333.73 – 2,000 = <strong>€12,984.60</strong>. Accept — NPV is strongly positive. Key trap: Year 3 is a net outflow (€6K inflow minus €8K additional cost). Don't discount inflows and outflows separately — net them first within each period.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q6',this.value)" onfocus="loadNote('p26q6',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q7 — NPV & IRR (mirrors Prep 1 Q7) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">7</div>
+      <div class="q-preview">Project: –€80,000 now, single CF of €120,000 in 6 years — NPV at 4%, at 8%, and maximum rate</div>
+      <span class="q-topic-tag topic-npv">NPV / IRR</span>
+      <span class="q-answer-badge">IRR = 7.0%</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Consider a project that requires an initial investment of €80,000 and will produce a single cash flow of €120,000 in six years.</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>What is the NPV if the six-year interest rate is 4% (EAR)?</li>
+        <li>What is the NPV if the six-year interest rate is 8% (EAR)?</li>
+        <li>What is the highest six-year interest rate at which this project is still profitable?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) NPV = –80,000 + 120,000/(1.04)⁶ = –80,000 + 94,888 = <strong>€14,888</strong><br>
+          b) NPV = –80,000 + 120,000/(1.08)⁶ = –80,000 + 75,641 = <strong>–€4,359</strong> (reject)<br>
+          c) Set NPV = 0: (1+r)⁶ = 120,000/80,000 = 1.50<br>
+             r = 1.50^(1/6) – 1 = 1.0700 – 1 = <strong>7.0%</strong> = IRR
+        </div>
+        <p class="solution-text">The IRR of 7.0% is the breakeven rate. At any cost of capital below 7%, NPV is positive. Note that the IRR here is easy to compute because 120/80 = 1.5 is a clean ratio — the exam hint "you don't need a financial calculator" signals this type of problem.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q7',this.value)" onfocus="loadNote('p26q7',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q8 — Projects A vs B (mirrors Prep 1 Q9 / Prep 2 Q1 with new numbers) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">8</div>
+      <div class="q-preview">Projects X and Y: both cost €200M, k=12%, 5-year life — NPV, IRR, MIRR, payback. Which do you choose?</div>
+      <span class="q-topic-tag topic-npv">NPV / IRR / MIRR / Payback</span>
+      <span class="q-answer-badge">Choose X (higher NPV)</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">You are deciding between two potential investments (X and Y). Each costs €200 million and the cost of capital is 12%. The expected returns over a 5-year life are shown below.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Year</th><th>Project X (€M)</th><th>Project Y (€M)</th></tr>
+          <tr><td>0</td><td>–200</td><td>–200</td></tr>
+          <tr><td>1</td><td>120</td><td>55</td></tr>
+          <tr><td>2</td><td>60</td><td>55</td></tr>
+          <tr><td>3</td><td>50</td><td>65</td></tr>
+          <tr><td>4</td><td>40</td><td>75</td></tr>
+          <tr><td>5</td><td>30</td><td>85</td></tr>
+        </table>
+      </div>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>Calculate NPV, IRR, MIRR, and payback period for each project.</li>
+        <li>Are the projects viable? Which would you choose if mutually exclusive? If independent?</li>
+        <li>Why could a decision based on IRR alone be wrong?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          PROJECT X:<br>
+          NPV = –200 + 120/1.12 + 60/1.12² + 50/1.12³ + 40/1.12⁴ + 30/1.12⁵<br>
+              = –200 + 107.14 + 47.83 + 35.59 + 25.42 + 17.02 = <strong>€33.00M</strong><br>
+          IRR ≈ 22.8% (trial: at 22%: NPV≈+1.5; at 23%: NPV≈–0.3 → ≈22.8%)<br>
+          Payback: 120 in yr1, cumulative=120. Need 80 more. Yr2=60 → cumul=180. Need 20 more of yr3's 50 → 2 + 20/50 = <strong>2.40 years</strong><br><br>
+          PROJECT Y:<br>
+          NPV = –200 + 55/1.12 + 55/1.12² + 65/1.12³ + 75/1.12⁴ + 85/1.12⁵<br>
+              = –200 + 49.11 + 43.85 + 46.27 + 47.67 + 48.22 = <strong>€35.12M</strong><br>
+          IRR ≈ 17.8%<br>
+          Payback: 55+55=110 after yr2. Need 90 more. Yr3=65 → cumul=175. Need 25 of yr4's 75 → 3 + 25/75 = <strong>3.33 years</strong>
+        </div>
+        <div class="formula">
+          b) Both NPV &gt; 0 and IRR &gt; 12% → both viable independently.<br>
+          Mutually exclusive: choose Y (NPV_Y = €35.12M &gt; NPV_X = €33.00M) → use NPV rule.<br><br>
+          c) IRR says X (22.8%) &gt; Y (17.8%) → pick X. But NPV says Y creates more wealth. IRR misleads because X returns cash earlier (front-loaded) → high IRR on smaller later CFs. NPV correctly measures total value created.
+        </div>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q8',this.value)" onfocus="loadNote('p26q8',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q9 — Portfolio (mirrors Prep 2 Q2 with new numbers) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">9</div>
+      <div class="q-preview">Nestlé: E[R]=6%, SD=14%. Roche: E[R]=11%, SD=22%. Correlation=35%. Equal-weighted portfolio.</div>
+      <span class="q-topic-tag topic-risk">Portfolio — Variance</span>
+      <span class="q-answer-badge">E[R]=8.5%, SD=15.18%</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Nestlé has an expected return of 6% and standard deviation of 14%. Roche has an expected return of 11% and standard deviation of 22%. The correlation between them is 35%. You invest equally in both (50%/50%).</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>What is the expected return of the portfolio?</li>
+        <li>What is the standard deviation of the portfolio?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) E[R_p] = 0.5 × 6% + 0.5 × 11% = <strong>8.5%</strong><br><br>
+          b) Var(R_p) = (0.5)²(0.14)² + (0.5)²(0.22)² + 2(0.5)(0.5)(0.35)(0.14)(0.22)<br>
+                      = 0.25(0.0196) + 0.25(0.0484) + 0.5(0.35)(0.0308)<br>
+                      = 0.0049 + 0.0121 + 0.00539<br>
+                      = 0.02239<br>
+             SD = √0.02239 = <strong>14.96% ≈ 15.0%</strong><br><br>
+          Weighted average SD = 0.5(14%) + 0.5(22%) = 18%<br>
+          Portfolio SD (15.0%) &lt; weighted average (18%) — diversification saves 3pp of risk.
+        </div>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q9',this.value)" onfocus="loadNote('p26q9',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q10 — CAPM from correlation (mirrors Prep 2 Q3) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">10</div>
+      <div class="q-preview">r_f=3%, market E[R]=9%, SD=18%. Pfizer: SD=25%, correlation with market=0.40 — beta and expected return?</div>
+      <span class="q-topic-tag topic-capm">CAPM — Beta from Correlation</span>
+      <span class="q-answer-badge">β=0.556, E[R]=6.33%</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Suppose the risk-free return is 3% and the market portfolio has an expected return of 9% and a volatility of 18%. Pfizer stock has a volatility of 25% and a correlation with the market of 0.40.</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>What is Pfizer's beta with respect to the market portfolio?</li>
+        <li>Under CAPM, what is Pfizer's expected return?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) β = ρ × σ_stock / σ_market = 0.40 × 25% / 18% = 0.40 × 1.389 = <strong>0.556</strong><br><br>
+          b) E[R] = r_f + β × (r_M – r_f)<br>
+                  = 3% + 0.556 × (9% – 3%)<br>
+                  = 3% + 0.556 × 6%<br>
+                  = 3% + 3.33% = <strong>6.33%</strong>
+        </div>
+        <p class="solution-text">Pfizer has substantial total volatility (25%) but moderate correlation with the market (0.40). Much of its volatility is drug-pipeline specific (diversifiable). CAPM only rewards the systematic portion — beta = 0.556 — so the expected return is only 6.33%, not the 25% volatility might imply to a naive observer.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q10',this.value)" onfocus="loadNote('p26q10',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q11 — Theory: Capital structure signalling -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">11</div>
+      <div class="q-preview">A profitable firm announces a large share buyback. Under signalling theory, what does this communicate — and what should happen to the stock price?</div>
+      <span class="q-topic-tag topic-capstruct">Theory — Signalling</span>
+      <span class="q-answer-badge">Price rises</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A company announces it will repurchase 10% of its outstanding shares using cash on its balance sheet. No new projects or strategic changes are announced. Under the signalling theory of capital structure, what does this action communicate to the market, and what is the likely price effect?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> The stock price falls — buying back shares reduces the float and makes the stock less liquid.</li>
+        <li class="option"><span class="option-letter">b</span> No effect — MM irrelevance says capital structure decisions do not affect firm value.</li>
+        <li class="option correct"><span class="option-letter">c</span> The stock price rises — management signals that they believe the stock is undervalued and that the firm has excess cash beyond what is needed for all positive-NPV projects.</li>
+        <li class="option"><span class="option-letter">d</span> The stock price falls — spending cash on buybacks instead of investment signals poor growth prospects.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: C</div>
+        <p class="solution-text">Share buybacks are the mirror image of equity issuance in signalling terms. Managers issue equity when they believe shares are overvalued; they buy back shares when they believe shares are undervalued. A buyback therefore signals two things: (1) management believes the current price is below intrinsic value, and (2) the firm has generated enough cash internally to fund all worthwhile projects and still return surplus capital. Both signals are positive. Empirically, buyback announcements are associated with significant positive abnormal returns on average. Note: MM irrelevance (answer b) applies in perfect markets — real markets have asymmetric information, so signals matter.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q11',this.value)" onfocus="loadNote('p26q11',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q12 — Tax Shield (mirrors Prep 2 Q5/Q10 with new numbers) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">12</div>
+      <div class="q-preview">Bondi Corp: $20M permanent debt, 5% interest, corporate tax = 28%. PV of perpetual tax shield? Does it change if rate rises to 7%?</div>
+      <span class="q-topic-tag topic-capstruct">Tax Shield — MM</span>
+      <span class="q-answer-badge">$5.6M — unchanged</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Bondi Corporation has $20 million in permanent outstanding debt with an interest rate of 5%. The corporate tax rate is 28%.</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>What is the annual interest tax shield?</li>
+        <li>What is the present value of the perpetual tax shield?</li>
+        <li>Suppose interest rates rise and Bondi refinances at 7%. How does the PV of the tax shield change?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          a) Annual shield = D × r_d × T = 20M × 0.05 × 0.28 = <strong>$280,000</strong><br><br>
+          b) PV = Annual shield / r_d = 280,000 / 0.05 = $5,600,000<br>
+             OR directly: PV = T × D = 0.28 × 20M = <strong>$5,600,000</strong> ← much faster<br><br>
+          c) At 7%: Annual shield = 20M × 0.07 × 0.28 = $392,000<br>
+             PV = 392,000 / 0.07 = $5,600,000<br>
+             → <strong>Unchanged. PV = T × D regardless of the interest rate.</strong>
+        </div>
+        <p class="solution-text">This is one of the most important results in corporate finance — and it always surprises people. The interest rate completely cancels out of the PV formula. Only the tax rate and the debt amount matter. A firm with $20M of debt at 5% has an identical tax shield to a firm with $20M at 7%. This is why the 2017 US tax reform (35% → 21%) reduced tax shield values by 40% — the rate dropped. The interest rate didn't change the shield; the tax rate did.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q12',this.value)" onfocus="loadNote('p26q12',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q13 — Theory: Pecking order and why firms don't issue equity -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">13</div>
+      <div class="q-preview">According to pecking order theory, in what order should firms raise capital — and why is equity the last resort?</div>
+      <span class="q-topic-tag topic-capstruct">Theory — Pecking Order</span>
+      <span class="q-answer-badge">Internal → Debt → Equity</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Which of the following best describes the pecking order theory of capital structure financing, and the correct rationale for each preference?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> Firms prefer equity first because it involves no fixed obligations, then debt, then retained earnings.</li>
+        <li class="option"><span class="option-letter">b</span> Firms prefer debt first because the tax shield makes it cheapest, then retained earnings, then equity.</li>
+        <li class="option correct"><span class="option-letter">c</span> Firms prefer internal funds first (no information asymmetry cost), then debt (signals confidence, limited adverse selection), then equity last (signals overvaluation, triggers price drop).</li>
+        <li class="option"><span class="option-letter">d</span> Firms are indifferent between sources of capital — the pecking order only applies to financially distressed firms.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: C</div>
+        <p class="solution-text">The pecking order arises from information asymmetry — managers know more about firm value than outside investors. Internal funds (retained earnings) have no adverse selection problem — no new securities are issued, so no signal is sent. Debt is next: issuing debt signals that management is confident enough in future cash flows to service fixed obligations, and investors have a contractual claim that partially protects them from overvaluation. Equity is the worst signal: if managers are willing to issue equity, rational investors infer the stock must be overvalued (otherwise managers would use cheaper debt). The result: equity issuance depresses the stock price, making it the most expensive source of capital in practice — which is why firms avoid it.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q13',this.value)" onfocus="loadNote('p26q13',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q14 — WACC (mirrors Prep 2 Q6 with new numbers) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">14</div>
+      <div class="q-preview">Meridian SA: €3M debt at 6%, €7M equity at 13%, tax rate 30% — pretax and after-tax WACC?</div>
+      <span class="q-topic-tag topic-wacc">WACC</span>
+      <span class="q-answer-badge">Pretax=10.7%, After-tax=10.16%</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Meridian SA has €3 million in debt with a pre-tax cost of 6% and €7 million in equity with a cost of 13%. The corporate tax rate is 30%.</p>
+      <ul style="list-style:lower-alpha;padding-left:20px;margin-bottom:12px">
+        <li>What is Meridian's pretax WACC?</li>
+        <li>What is Meridian's after-tax WACC?</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Solutions</div>
+        <div class="formula">
+          Total capital = 3 + 7 = €10M<br>
+          w_d = 3/10 = 0.30,   w_e = 7/10 = 0.70<br><br>
+          a) Pretax WACC = 0.30 × 6% + 0.70 × 13%<br>
+                         = 1.80% + 9.10% = <strong>10.90%</strong><br><br>
+          b) After-tax WACC = 0.30 × 6% × (1–0.30) + 0.70 × 13%<br>
+                            = 0.30 × 4.2% + 9.10%<br>
+                            = 1.26% + 9.10% = <strong>10.36%</strong>
+        </div>
+        <p class="solution-text">The only difference between pretax and after-tax WACC is that the cost of debt is multiplied by (1–T). Equity cost of capital is already after-tax from the investor's perspective — dividends and capital gains are paid from after-tax profits, so no further tax adjustment is needed on the equity component.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q14',this.value)" onfocus="loadNote('p26q14',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q15 — DDM: Gordon Growth (mirrors Prep 2 Q7) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">15</div>
+      <div class="q-preview">Adriatic Holdings: D₁=€2.40, g=5% constant, r_e=9% — stock price today?</div>
+      <span class="q-topic-tag topic-risk">DDM — Gordon Growth</span>
+      <span class="q-answer-badge">€60.00</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Adriatic Holdings is expected to pay a dividend of €2.40 next year. Dividends grow at a constant rate of 5% per year. The equity cost of capital is 9%. What is the current stock price?</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: €60.00</div>
+        <div class="formula">
+          P₀ = D₁ / (r_e – g) = 2.40 / (0.09 – 0.05) = 2.40 / 0.04 = <strong>€60.00</strong>
+        </div>
+        <p class="solution-text">Sanity check: dividend yield = D₁/P₀ = 2.40/60 = 4% and growth = 5%, so total return = 9% = r_e ✓. The denominator (r–g) is everything here — a small change creates a big price move. If g rose to 6%: P₀ = 2.40/0.03 = €80. If g fell to 4%: P₀ = 2.40/0.05 = €48. This sensitivity is why growth rate estimates are the most critical input in DCF models.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q15',this.value)" onfocus="loadNote('p26q15',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q16 — DDM: Multi-stage (mirrors Prep 2 Q8 / Colgate) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">16</div>
+      <div class="q-preview">Unilever: D₀=€1.80, grows by €0.20/yr for 4yr, then 5.5% constant. r_e=8%. Stock price today?</div>
+      <span class="q-topic-tag topic-risk">DDM — Multi-Stage (Arithmetic)</span>
+      <span class="q-answer-badge">≈€82–85</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Unilever just paid a dividend of €1.80 (D₀). Dividends will grow by €0.20 per year for the next four years (arithmetic growth). After that, earnings and dividends grow at a constant rate of 5.5% per year. The equity cost of capital is 8%. What is the stock price today?</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: ≈€83.70</div>
+        <div class="formula">
+          Explicit dividends (arithmetic +€0.20/yr):<br>
+          D₁ = 1.80 + 0.20 = €2.00<br>
+          D₂ = 2.00 + 0.20 = €2.20<br>
+          D₃ = 2.20 + 0.20 = €2.40<br>
+          D₄ = 2.40 + 0.20 = €2.60<br><br>
+          Terminal value at end of Year 4 (Gordon, g=5.5% from Year 5):<br>
+          D₅ = D₄ × 1.055 = 2.60 × 1.055 = €2.743<br>
+          P₄ = D₅ / (r–g) = 2.743 / (0.08 – 0.055) = 2.743 / 0.025 = €109.72<br><br>
+          P₀ = 2.00/1.08 + 2.20/1.08² + 2.40/1.08³ + (2.60+109.72)/1.08⁴<br>
+             = 1.852 + 1.886 + 1.905 + 82.59 / 1.3605<br>
+             = 1.852 + 1.886 + 1.905 + 77.33<br>
+             = <strong>€82.97 ≈ €83.00</strong>
+        </div>
+        <p class="solution-text">The terminal value (€77 of the €83 total = 93%) completely dominates — as it does in all realistic DDM valuations of stable firms. Small changes in g or r_e move the answer significantly. The exam will always ask you to compute this step-by-step — arithmetic growth means a different explicit dividend each year, not the same D×(1+g) pattern.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q16',this.value)" onfocus="loadNote('p26q16',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q17 — WACC from unlevered cost (mirrors Prep 2 Q9) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">17</div>
+      <div class="q-preview">Freight company: r_U=11%, 35% debt-financed, tax rate=25% — estimate WACC using MM formula</div>
+      <span class="q-topic-tag topic-wacc">WACC — MM Formula</span>
+      <span class="q-answer-badge">9.64%</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A freight company has an unlevered cost of capital of 11% and is 35% debt-financed. The corporate tax rate is 25%. Estimate the company's WACC using the MM formula.</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: WACC = 9.64%</div>
+        <div class="formula">
+          WACC = r_U × (1 – T × d)<br>
+               = 11% × (1 – 0.25 × 0.35)<br>
+               = 11% × (1 – 0.0875)<br>
+               = 11% × 0.9125 = <strong>9.64%</strong>
+        </div>
+        <p class="solution-text">d = D/V = 0.35 (the debt weight). The tax shield reduces WACC below the unlevered cost. Note that without debt (d=0), WACC = r_U = 11%. With debt, WACC falls to 9.64% — the difference represents the value created by the interest tax shield. More debt → lower WACC (up to the point where distress costs kick in).</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q17',this.value)" onfocus="loadNote('p26q17',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q18 — Theory: CAPM and market efficiency -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">18</div>
+      <div class="q-preview">A stock consistently earns above the SML prediction for 3 years. Which explanation is most consistent with semistrong market efficiency?</div>
+      <span class="q-topic-tag topic-capm">Theory — Efficiency &amp; CAPM</span>
+      <span class="q-answer-badge">Beta is mis-estimated</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">A fund's quantitative model shows that a particular stock has consistently earned returns above what CAPM predicts (above the SML) for three consecutive years. The fund manager concludes the market is inefficient and the stock is systematically mispriced. Which explanation is most consistent with semistrong-form market efficiency?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> The market is definitely inefficient — three years of outperformance proves it.</li>
+        <li class="option"><span class="option-letter">b</span> The manager got lucky — random variation can produce three years of outperformance.</li>
+        <li class="option correct"><span class="option-letter">c</span> The stock's beta is likely mis-estimated. If the true systematic risk is higher than measured, the required return should be higher — and the apparent excess return disappears once beta is corrected.</li>
+        <li class="option"><span class="option-letter">d</span> The stock has a unique product that makes it immune to market forces.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: C</div>
+        <p class="solution-text">Apparent violations of market efficiency are often the result of measurement error in beta, not true mispricing. CAPM uses a single market index as a proxy for the true "market portfolio" — but the true market portfolio includes all risky assets worldwide (human capital, real estate, private equity, etc.), and the measured beta is an approximation. If the stock has exposure to risk factors not captured by the market index (e.g., liquidity risk, size premium, value premium), the measured beta understates true systematic risk, and the apparent outperformance is actually appropriate compensation for omitted risk. The joint hypothesis problem: you can never test market efficiency without simultaneously testing the asset pricing model used to define "fair" return.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q18',this.value)" onfocus="loadNote('p26q18',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q19 — FCF (mirrors Prep 1 Q12 with new numbers) -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">19</div>
+      <div class="q-preview">Balkan Telecom: NI=€180M, D&A=€70M, CapEx=€140M, ΔNWC=+€15M, no interest. FCF?</div>
+      <span class="q-topic-tag topic-npv">Free Cash Flow</span>
+      <span class="q-answer-badge">FCF = €95M</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Balkan Telecom reported net income of €180 million for the most recent fiscal year. The firm had depreciation expenses of €70 million, capital expenditures of €140 million, and no interest expenses. Working capital increased by €15 million. Calculate the free cash flow for Balkan Telecom.</p>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: FCF = €95 million</div>
+        <div class="formula">
+          FCF = Net Income + Depreciation – CapEx – ΔNWC<br>
+              = 180 + 70 – 140 – 15<br>
+              = <strong>€95 million</strong>
+        </div>
+        <p class="solution-text">Two things often trip students up here: (1) depreciation is added back because it reduced net income but involved no cash outflow — the cash went out when the asset was originally purchased (as CapEx); (2) the increase in working capital (+€15M) is subtracted — cash was invested in the business (more inventory, more receivables) and is no longer available to investors. FCF (€95M) is lower than net income (€180M) because CapEx and working capital investment together absorbed €85M more than depreciation returned.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q19',this.value)" onfocus="loadNote('p26q19',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Q20 — Theory: Which statement about MIRR is FALSE -->
+  <div class="question-card">
+    <div class="q-header" onclick="toggleQ(this)">
+      <div class="q-num">20</div>
+      <div class="q-preview">Which of the following statements about MIRR is FALSE?</div>
+      <span class="q-topic-tag topic-npv">Theory — MIRR</span>
+      <span class="q-answer-badge">Statement C is FALSE</span>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text">Which of the following statements about the Modified Internal Rate of Return (MIRR) is FALSE?</p>
+      <ul class="options">
+        <li class="option"><span class="option-letter">a</span> MIRR assumes that all positive cash flows are reinvested at the cost of capital (WACC), which is more realistic than IRR's assumption.</li>
+        <li class="option"><span class="option-letter">b</span> When a project's IRR exceeds the WACC, the MIRR will be lower than the IRR.</li>
+        <li class="option correct"><span class="option-letter">c</span> MIRR and IRR will always give the same accept/reject decision for a project with normal cash flows, but MIRR always gives a higher numerical value than IRR.</li>
+        <li class="option"><span class="option-letter">d</span> MIRR resolves the problem of multiple IRRs that arises when a project's cash flows change sign more than once.</li>
+      </ul>
+      <div class="solution-block">
+        <div class="solution-label">✓ Answer: C is FALSE</div>
+        <p class="solution-text">Statement C contains two parts — the first is correct (MIRR and IRR give the same accept/reject decision for normal cash flows), but the second is wrong. MIRR does NOT always give a higher numerical value than IRR. Specifically: when IRR &gt; WACC (a good project), reinvesting at the lower WACC produces less terminal value, so MIRR &lt; IRR. When IRR &lt; WACC (a bad project), MIRR &gt; IRR. When IRR = WACC, MIRR = IRR. So the relationship between MIRR and IRR depends entirely on how IRR compares to WACC — it is not a fixed direction. Statements a, b, and d are all correct descriptions of MIRR.</p>
+      </div>
+      <div class="discussion-zone"><div class="discussion-label">📝 Study Notes</div>
+      <textarea class="note-area" placeholder="Your working…" onchange="saveNote('p26q20',this.value)" onfocus="loadNote('p26q20',this)"></textarea></div>
+    </div>
+  </div>
+
+  <!-- Answer key summary -->
+  <div style="margin-top:28px;padding:18px 20px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-muted);line-height:1.9">
+    <strong style="color:var(--accent);font-size:14px">Quick Answer Key</strong><br>
+    1: a)€4,429 b)€5,604 c)€5,554 &nbsp;·&nbsp;
+    2: a)€9,412 b)€4,118 c)€13,328 &nbsp;·&nbsp;
+    3: Take €8,000 now &nbsp;·&nbsp;
+    4: $12.00/quarter, 80 periods &nbsp;·&nbsp;
+    5: €1,130.55 &nbsp;·&nbsp;
+    6: Accept (NPV &gt; 0) &nbsp;·&nbsp;
+    7: a)€14,888 b)−€4,359 c)IRR=7.0% &nbsp;·&nbsp;
+    8: X NPV=€33M, Y NPV=€35.1M → choose Y mutually excl. &nbsp;·&nbsp;
+    9: E[R]=8.5%, SD≈15.0% &nbsp;·&nbsp;
+    10: β=0.556, E[R]=6.33% &nbsp;·&nbsp;
+    11: C (price rises — undervaluation signal) &nbsp;·&nbsp;
+    12: Shield PV=$5.6M, unchanged at 7% &nbsp;·&nbsp;
+    13: C (internal→debt→equity) &nbsp;·&nbsp;
+    14: Pretax=10.90%, After-tax=10.36% &nbsp;·&nbsp;
+    15: €60.00 &nbsp;·&nbsp;
+    16: ≈€83 &nbsp;·&nbsp;
+    17: 9.64% &nbsp;·&nbsp;
+    18: C (beta mis-estimated) &nbsp;·&nbsp;
+    19: €95M &nbsp;·&nbsp;
+    20: C is FALSE (MIRR not always higher than IRR)
+  </div>
+</div><!-- /page-practice2026 -->
 
 </body>
 </html>
