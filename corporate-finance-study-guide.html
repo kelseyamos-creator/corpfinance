@@ -4579,6 +4579,10 @@
 
 <script>
   // ── NAVIGATION with hash support (enables browser back/forward) ──
+  function canUseHistory() {
+    try { return window.self === window.top && window.location.href !== 'about:srcdoc'; } catch(e) { return false; }
+  }
+
   function showPage(id, pushState) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -4590,9 +4594,8 @@
       }
     });
     window.scrollTo(0, 0);
-    // Update the URL hash so back/forward buttons work
-    if (pushState !== false) {
-      history.pushState({ page: id }, '', '#' + id);
+    if (pushState !== false && canUseHistory()) {
+      try { history.pushState({ page: id }, '', '#' + id); } catch(e) {}
     }
   }
 
@@ -4602,13 +4605,13 @@
     showPage(id, false);
   });
 
-  // On first load, read hash from URL (lets you share direct links to sections)
+  // On first load, read hash from URL
   document.addEventListener('DOMContentLoaded', function() {
     const hash = location.hash.slice(1);
     if (hash && document.getElementById('page-' + hash)) {
       showPage(hash, false);
-    } else {
-      history.replaceState({ page: 'overview' }, '', '#overview');
+    } else if (canUseHistory()) {
+      try { history.replaceState({ page: 'overview' }, '', '#overview'); } catch(e) {}
     }
 
     // Pre-load all saved notes
