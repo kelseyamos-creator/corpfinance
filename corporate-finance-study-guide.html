@@ -324,38 +324,49 @@
     transition: all 0.15s;
   }
 
+  /* Correct answer — hidden until revealed */
   .option.correct {
+    background: transparent;
+    border-color: var(--border);
+  }
+  .option.correct .option-letter {
+    background: var(--surface2);
+    color: var(--text-muted);
+  }
+  /* Show correct answer only after reveal button is clicked */
+  .q-body.revealed .option.correct {
     background: var(--accent-light);
     border-color: var(--accent);
   }
-
-  .option-letter {
-    font-family: 'DM Mono', monospace;
-    font-weight: 600;
-    font-size: 12px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    background: var(--surface2);
-    color: var(--text-muted);
-    margin-top: 1px;
-  }
-
-  .option.correct .option-letter {
+  .q-body.revealed .option.correct .option-letter {
     background: var(--accent);
     color: #fff;
   }
 
-  /* ── SOLUTION ── */
+  /* Solution block hidden until revealed */
   .solution-block {
+    display: none;
     border-top: 1px solid var(--border);
     padding-top: 16px;
     margin-top: 4px;
   }
+  .q-body.revealed .solution-block { display: block; }
+
+  .reveal-btn {
+    margin-top: 14px;
+    padding: 9px 22px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    display: inline-block;
+  }
+  .reveal-btn:hover { opacity: 0.88; }
+  .q-body.revealed .reveal-btn { display: none; }
 
   .solution-label {
     font-size: 10px;
@@ -7035,9 +7046,32 @@
       header.classList.add('open');
     } else {
       body.classList.remove('open');
+      body.classList.remove('revealed');
       header.classList.remove('open');
     }
   }
+
+  function revealAnswer(btn) {
+    btn.closest('.q-body').classList.add('revealed');
+  }
+
+  // Inject reveal button into every q-body that has a solution-block
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.q-body').forEach(body => {
+      if (body.querySelector('.solution-block') || body.querySelector('.options')) {
+        const btn = document.createElement('button');
+        btn.className = 'reveal-btn';
+        btn.textContent = '👁 Show Answer';
+        btn.onclick = function() { revealAnswer(this); };
+        // Insert before solution-block if it exists, else at end of q-body
+        const sol = body.querySelector('.solution-block');
+        const disc = body.querySelector('.discussion-zone');
+        if (sol) body.insertBefore(btn, sol);
+        else if (disc) body.insertBefore(btn, disc);
+        else body.appendChild(btn);
+      }
+    });
+  });
 
   // ── NOTES (localStorage) ──
   function saveNote(key, value) {
