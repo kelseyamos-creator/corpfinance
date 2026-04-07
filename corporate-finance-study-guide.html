@@ -324,10 +324,25 @@
     transition: all 0.15s;
   }
 
-  /* Correct answer — hidden until revealed */
+  /* Correct answer — completely invisible until revealed */
   .option.correct {
     background: transparent;
     border-color: var(--border);
+  }
+  .option-letter {
+    font-family: 'DM Mono', monospace;
+    font-weight: 600;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--surface2);
+    color: var(--text-muted);
+    margin-top: 1px;
   }
   .option.correct .option-letter {
     background: var(--surface2);
@@ -586,6 +601,52 @@
     .sidebar { display: none; }
     .main { padding: 24px 20px 60px; }
   }
+
+  /* ── VOCABULARY ── */
+  .vocab-card {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .vocab-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    background: var(--surface);
+    user-select: none;
+  }
+  .vocab-header:hover { background: var(--surface2); }
+  .vocab-abbr {
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent);
+    min-width: 130px;
+    flex-shrink: 0;
+  }
+  .vocab-full {
+    font-size: 13.5px;
+    color: var(--text);
+    flex: 1;
+  }
+  .vocab-body {
+    display: none;
+    padding: 14px 18px;
+    background: var(--surface2);
+    border-top: 1px solid var(--border);
+  }
+  .vocab-card.vocab-open .vocab-body { display: block; }
+  .vocab-card.vocab-open .q-chevron { transform: rotate(180deg); }
+  .vocab-def {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--text);
+    white-space: pre-wrap;
+  }
+
 </style>
 </head>
 <body>
@@ -664,6 +725,10 @@
       <span class="nav-badge">PF2</span>
     </a>
 
+    <div class="nav-section">Reference</div>
+    <a class="nav-item" onclick="showPage('vocab')">
+      📖 Vocabulary (76 terms)
+    </a>
     <div class="nav-section">By Topic</div>
     <a class="nav-item" onclick="showPage('theory-quiz')">
       🧠 Theory Quiz (25q)
@@ -6987,6 +7052,1270 @@
   </div>
 </div><!-- /page-practice2026 -->
 
+<div class="page" id="page-vocab">
+  <h1 class="page-title">Vocabulary &amp; Abbreviations</h1>
+  <p class="page-sub">76 terms · Corporate Finance MBA · Source: library_of_termins_TK.xlsx</p>
+
+  <div class="info-box">Click any term to expand its definition. Use the search box to filter.</div>
+
+  <div style="margin-bottom:16px">
+    <input id="vocab-search" type="text" placeholder="Search terms or definitions…"
+      oninput="filterVocab(this.value)"
+      style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;
+             font-size:14px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text)">
+  </div>
+
+  <div id="vocab-list">
+  <div class="vocab-card" data-search="accrued accrued cash earned or accumulated over time but not yeat paied
+
+aleardy happened economically, not settled in cash">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">ACCRUED</div>
+      <div class="vocab-full">Accrued</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">cash earned or accumulated over time but not yeat paied<br>aleardy happened economically, not settled in cash</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="agency problems agency problems agency problem =
+→ conflict of interest between owners and managers
+
+meaning:
+owners (shareholders) want maximize value
+managers may act in their own interest
+
+examples:
+managers take high salary/bonu">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">AGENCY PROBLEMS</div>
+      <div class="vocab-full">Agency Problems</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Agency problem =<br>→ conflict of interest between owners and managers<br>Meaning:<br>Owners (shareholders) want maximize value<br>Managers may act in their own interest<br>Examples:<br>Managers take high salary/bonuses<br>Avoid risky but profitable projects<br>Focus on short-term results<br>How it’s reduced:<br>Performance-based pay<br>Monitoring (board, audits)<br>Share ownership by managers<br>Key idea:<br>Separation of ownership and control creates conflict</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="amortization amortization gradual loss of value of an intangible asset over time
+replacement">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">amortization</div>
+      <div class="vocab-full">Amortization</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">gradual loss of value of an intangible asset over time<br>replacement</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="annuity annuity when a constant cahs flow occur at regular intervals for a limited period of time">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">ANNUITY</div>
+      <div class="vocab-full">Annuity</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">when a constant cahs flow occur at regular intervals for a limited period of time</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="bond bond bond =
+→ a loan you give to a company or government
+
+meaning:
+you lend money
+they promise to:
+pay interest (coupon)
+return principal at maturity
+
+example:
+you buy bond for €1,000
+get €50 per year (5% ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">BOND</div>
+      <div class="vocab-full">Bond</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Bond =<br>→ a loan you give to a company or government<br>Meaning:<br>You lend money<br>They promise to:<br>pay interest (coupon)<br>return principal at maturity<br>Example:<br>You buy bond for €1,000<br>Get €50 per year (5% coupon)<br>After 5 years → get €1,000 back<br>Key parts:<br>Face value (e.g. €1,000)<br>Coupon (interest)<br>Maturity (end date)<br>Types:<br>Government bonds (safer)<br>Corporate bonds (riskier)<br>Key idea:<br>You are a lender, not owner (unlike stocks)<br>Short:<br>Bond = loan with fixed interest and repayment<br>→ You lend money to someone<br>Real-life example<br>You give €1,000 to a company<br>They say:<br>“We will pay you €50 every year”<br>“We will return €1,000 in 5 years”<br>What you get<br>€50 each year → interest<br>€1,000 at the end → your money back<br>So:<br>Bond = you are the lender<br>Stock = you are the owner<br>Key idea<br>Bond = safer, fixed payments<br>Stock = riskier, uncertain returns<br>→ Bond = you give money and get interest (cupone) + your money back later<br>- cupon is fixed<br>- there is face value of bond<br>- there is maturity date</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="bond  bond has starting line (when it was born) and maturity (when they die) → we 
+can calculate back every possible payment (becose we have starting and ending 
+point) - you know the risk (we have risk fre">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">BOND</div>
+      <div class="vocab-full"></div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">bond has starting line (when it was born) and maturity (when they die) → we<br>can calculate back every possible payment (becose we have starting and ending<br>point) - you know the risk (we have risk free rate<br>Bond has face value<br>bond have fixed interest rates</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="capex capital expenditure money company spends to buy or upgrade long-term assets
+
+if company wants to expand new investement →capex &gt;deprieciation
+capex=gross investment = replacement + total new investement">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CAPEX</div>
+      <div class="vocab-full">Capital Expenditure</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">money company spends to buy or upgrade long-term assets<br>if company wants to expand new investement →CAPEX &gt;DEPRIECIATION<br>CAPEX=gross investment = replacement + total new investement</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="capital gain capital gain capital gain =
+→ increase in value of an investment
+profit from price increase
+
+meaning:
+profit from selling an asset at a higher price than you bought it
+example:
+
+buy share at €50
+sell at €70
+→ gain">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CAPITAL GAIN</div>
+      <div class="vocab-full">Capital Gain</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Capital gain =<br>→ increase in value of an investment<br>profit from price increase<br>Meaning:<br>Profit from selling an asset at a higher price than you bought it<br>Example:<br>Buy share at €50<br>Sell at €70<br>→ Gain = €20</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="capm capital asset pricing model capm (capital asset pricing model) =
+→ model used to calculate expected return of a stock
+
+capm allows us to identinfy the efficient portfolio of risky assets without having and knowlesdge of the expe">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CAPM</div>
+      <div class="vocab-full">Capital Asset Pricing Model</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">CAPM (Capital Asset Pricing Model) =<br>→ model used to calculate expected return of a stock<br>CAPM allows us to identinfy the efficient portfolio of risky assets without having and knowlesdge of the expected return of each stock<br>Formula:<br>Expected return = Risk-free rate + Beta × Market risk premium<br>Meaning:<br>Return depends on:<br>Risk-free return<br>Market risk<br>Stock’s sensitivity (beta)<br>What CAPM is really asking<br>→ “What return should I demand for this risk?”<br>Think step by step<br>You can invest in something safe<br>→ government bonds → e.g. 3%<br>Stocks are riskier<br>→ so you want extra return<br>How much extra?<br>→ depends on beta (risk level)<br>Simple version of CAPM<br>Expected return =<br>safe return + extra for risk<br>Example in plain logic<br>Safe = 3%<br>Market extra = 5%<br>Stock is risky (beta = 1.2)<br>→ You demand:<br>3% + (1.2 × 5%) = 9%<br>What beta means here<br>Beta = 1 → normal risk<br>Beta &gt; 1 → more risky → need more return<br>Beta &lt; 1 → less risky → accept less return<br>Key idea (this is it)<br>More risk → higher required return<br>CAPM just quantifies that</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="cml capital makret line cml (capital market line) =
+→ line showing best possible return for each level of risk when combining risk-free asset + market portfolio
+
+meaning
+it represents optimal portfolios
+based on:
+risk-free a">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CML</div>
+      <div class="vocab-full">Capital Makret Line</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">CML (Capital Market Line) =<br>→ line showing best possible return for each level of risk when combining risk-free asset + market portfolio<br>Meaning<br>It represents optimal portfolios<br>Based on:<br>Risk-free asset<br>Market portfolio<br>What it shows<br>X-axis → risk (volatility)<br>Y-axis → return<br>→ Higher risk → higher expected return<br>Key idea<br>You combine:<br>Safe asset (e.g. T-bills)<br>Risky market portfolio<br>→ CML gives the best combinations<br>Important<br>Points on CML → efficient (optimal)<br>Below CML → inefficient<br>Simple interpretation<br>It is the best risk-return trade-off available</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="common risk /
+independent risk common risk/independent risk common risk (systematic risk) =
+→ risk that affects all investments / the whole market
+risk that is perfectly correlated
+
+examples:
+interest rate changes
+inflation
+economic recession
+
+key point:
+canno">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">COMMON RISK /
+INDEPENDENT RISK</div>
+      <div class="vocab-full">Common Risk/Independent Risk</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Common risk (systematic risk) =<br>→ risk that affects all investments / the whole market<br>risk that is perfectly correlated<br>Examples:<br>Interest rate changes<br>Inflation<br>Economic recession<br>Key point:<br>Cannot be diversified away ❌<br>Independent risk (idiosyncratic risk) =<br>→ risk specific to one company or asset<br>risk that  is uncorrelated<br>Examples:<br>Company scandal<br>Product failure<br>Management issues<br>Key point:<br>Can be reduced by diversification ✅<br>Simple comparison:<br>Common risk → market-wide → unavoidable<br>Independent risk → company-specific → diversifiable<br>Common risk = market risk<br>Independent risk = company-specific risk</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="coorporation coorporation corporation =
+→ a legal entity separate from its owners
+
+meaning:
+company exists independently
+can own assets, sign contracts, borrow money
+
+key features:
+limited liability → owners not personally res">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">COORPORATION</div>
+      <div class="vocab-full">Coorporation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Corporation =<br>→ a legal entity separate from its owners<br>Meaning:<br>Company exists independently<br>Can own assets, sign contracts, borrow money<br>Key features:<br>Limited liability → owners not personally responsible<br>Ownership via shares<br>Can raise capital by issuing stock<br>Structure:<br>Shareholders (owners)<br>Management (runs company)<br>Example:<br>Large companies (Apple, Pfizer, etc.) are corporations<br>Key idea:<br>Owners and company are legally separate<br>Short:<br>Corporation = independent company owned by shareholders</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="corporate raider corporate raider corporate raider =
+→ investor who buys a large stake in a company to take control and change it
+
+goal
+improve company
+increase value
+often sell for profit
+
+how they act:
+buy significant shares
+push ma">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CORPORATE RAIDER</div>
+      <div class="vocab-full">Corporate Raider</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Corporate raider =<br>→ investor who buys a large stake in a company to take control and change it<br>Goal<br>Improve company<br>Increase value<br>Often sell for profit<br>How they act:<br>Buy significant shares<br>Push management changes<br>Restructure or break up company<br>Typical actions:<br>Replace management<br>Sell assets/divisions<br>Cut costs<br>Perception:<br>Negative → seen as aggressive, short-term<br>Positive → can fix inefficient companies<br>Key idea:<br>Uses ownership to force change<br>Short:<br>Corporate raider = investor who takes control to unlock value</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="corr correlation correlation =
+→ measure of how strongly two assets move together
+
+range:
++1 → move exactly together
+0 → no relationship
+−1 → move exactly opposite
+
+meaning:
+positive → same direction
+negative → opposi">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">Corr</div>
+      <div class="vocab-full">Correlation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Correlation =<br>→ measure of how strongly two assets move together<br>Range:<br>+1 → move exactly together<br>0 → no relationship<br>−1 → move exactly opposite<br>Meaning:<br>Positive → same direction<br>Negative → opposite direction<br>Example:<br>Correlation = 0.8 → strong same movement<br>Correlation = −0.5 → moderate opposite movement<br>Why important:<br>Key for diversification<br>Lower correlation → lower portfolio risk<br>Key difference vs covariance:<br>Correlation is standardized (−1 to +1)<br>Easier to interpret<br>Short:<br>Correlation = strength and direction of relationship between assets</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="cost of equity cost of equity (equity cost of capital) meaning:
+required return for shareholders
+compensation for risk
+what investors require to hold the stock
+
+most common formula (capm):
+cost of equity = risk-free rate + beta × market risk premium
+
+what">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">COST OF EQUITY</div>
+      <div class="vocab-full">Cost Of Equity (Equity Cost Of Capital)</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Meaning:<br>required return for shareholders<br>Compensation for risk<br>What investors require to hold the stock<br>Most common formula (CAPM):<br>Cost of equity = Risk-free rate + Beta × Market risk premium<br>What it depends on:<br>Risk-free rate (e.g. government bonds)<br>Beta (how risky the stock is)<br>Market premium (extra return for stocks)<br>Interpretation:<br>Higher risk → higher cost of equity<br>Stable company → lower cost<br>1. Cost of Equity<br>→ return required by shareholders<br>Only equity investors<br>Higher (more risk)<br>2. WACC<br>→ weighted average cost of equity + debt<br>Includes all financing sources<br>Uses after-tax cost of debt<br>3. Cost of Capital (general term)<br>→ overall required return for the company<br>Often = WACC (in practice)<br>Can also mean unlevered cost (depends on context)<br>Key differences COST OF EQUITY vs WACC<br>vs COST OF CAPITAL<br>Cost of equity → only shareholders<br>WACC → equity + debt<br>Cost of capital → umbrella term<br>Relationship<br>Cost of equity ≥ WACC<br>WACC = main practical “cost of capital”<br>Simple view<br>Equity only → cost of equity<br>Whole company → WACC<br>Short:<br>Cost of equity = shareholder return<br>WACC = blended return<br>Cost of capital = general concept (usually WACC)</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="cov covariance covariance =
+→ measure of how two variables (e.g. stocks) move together
+
+meaning:
+shows relationship between returns of two assets
+
+interpretation:
+positive covariance → move in same direction
+negativ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">Cov</div>
+      <div class="vocab-full">Covariance</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Covariance =<br>→ measure of how two variables (e.g. stocks) move together<br>Meaning:<br>Shows relationship between returns of two assets<br>Interpretation:<br>Positive covariance → move in same direction<br>Negative covariance → move in opposite direction<br>Near zero → no relationship<br>Example:<br>Stock A ↑ and Stock B ↑ → positive<br>Stock A ↑ and Stock B ↓ → negative<br>Why important:<br>Used in portfolio diversification<br>Helps reduce risk<br>Key point:<br>Covariance shows direction, not strength (hard to interpret alone)<br>Short:<br>Covariance = how two assets move together</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="crp country risk premium country risk premium (crp)
+→ extra return investors demand for investing in a risky country
+
+meaning:
+higher political/economic risk → higher crp
+
+used in:
+cost of equity
+capm (for emerging markets)
+e">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CRP</div>
+      <div class="vocab-full">Country Risk Premium</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Country Risk Premium (CRP)<br>→ extra return investors demand for investing in a risky country<br>Meaning:<br>Higher political/economic risk → higher CRP<br>Used in:<br>Cost of equity<br>CAPM (for emerging markets)<br>Example:<br>Base market premium = 5%<br>Country risk premium = 3%<br>→ Total risk premium = 8%<br>What increases CRP:<br>Political instability<br>Weak economy<br>Currency risk<br>Key idea:<br>Investors want extra return for extra country risk</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="crsp center for research and security prices utlimate database for shareprices">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">CRSP</div>
+      <div class="vocab-full">Center For Research And Security Prices</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">utlimate database for shareprices</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="dark pools dark pools dark pool =
+→ private trading platform where large investors trade without showing orders publicly
+
+meaning:
+trades are hidden from the public market
+prices and orders are not visible in real time
+
+wh">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">DARK POOLS</div>
+      <div class="vocab-full">Dark Pools</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Dark pool =<br>→ private trading platform where large investors trade without showing orders publicly<br>Meaning:<br>Trades are hidden from the public market<br>Prices and orders are not visible in real time<br>Why used:<br>To avoid moving the market price<br>Useful for large trades (institutions)<br>Example:<br>Fund wants to sell millions of shares<br>→ uses dark pool to avoid price drop<br>Key point:<br>Less transparency<br>But helps execute big trades smoothly<br>Short:<br>Dark pool = hidden trading venue for large transactions</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="depreciation depreciation gradual loss of value of an tangible asset over time
+
+resource bought in the past. it lower your profit
+depriciation is cost to firm (in the income statement)">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">depreciation</div>
+      <div class="vocab-full">Depreciation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">gradual loss of value of an tangible asset over time<br>resource bought in the past. It lower your profit<br>depriciation is cost to firm (in the income statement)</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="dirty price dirty price dirty price (bond) =
+→ actual price you pay when buying a bond
+
+what it includes
+clean price (bond value)
++ accrued interest
+example
+clean price = €980
+accrued interest = €20
+→ dirty price = €1,000 (y">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">DIRTY PRICE</div>
+      <div class="vocab-full">Dirty Price</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Dirty price (bond) =<br>→ actual price you pay when buying a bond<br>What it includes<br>Clean price (bond value)<br>+ accrued interest<br>Example<br>Clean price = €980<br>Accrued interest = €20<br>→ Dirty price = €1,000 (you pay this)<br>Key idea<br>→ When you buy a bond, you also pay for interest already earned<br>Think like this<br>Bond pays interest every 6 months<br>But interest is actually earned daily<br>Example<br>Last coupon was 3 months ago<br>Seller has earned half of the interest already<br>When you buy<br>You pay:<br>Bond price<br>+ that half interest<br>Dirty price = bond price + interest already earned by seller</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="dividend payout ratio dividend payout ratio fraction of earnings payed as dividend each year
+formula:
+dividend payout ratio = dividends ÷ net income
+
+meaning:
+shows how much profit goes to shareholders vs reinvested
+
+interpretation:
+higher payo">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">DIVIDEND PAYOUT RATIO</div>
+      <div class="vocab-full">Dividend Payout Ratio</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">fraction of earnings payed as dividend each year<br>Formula:<br>Dividend payout ratio = Dividends ÷ Net income<br>Meaning:<br>Shows how much profit goes to shareholders vs reinvested<br>Interpretation:<br>Higher payout → less retained earnings → less funds to invest →smaller growth next year<br>Example:<br>Net income = €100<br>Dividends = €40<br>→ Payout = 40%</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="dividend yield dividen yield annual dividend as % of share price
+dividend yield = % return from dividend
+
+interpretation:
+high yield → more income (but can signal risk)
+low yield → less income (often growth companies)
+
+important:">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">DIVIDEND YIELD</div>
+      <div class="vocab-full">Dividen Yield</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">annual dividend as % of share price<br>Dividend yield = % return from dividend<br>Interpretation:<br>High yield → more income (but can signal risk)<br>Low yield → less income (often growth companies)<br>Important:<br>Yield changes with share price<br>Falling price → yield goes up</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="ebit earnings before ineterest and tax ebit=revenue - operating costs
+ebit=ebitda - depreciation - amortization
+same as operating income
+ebit (operating) margin = operating profit/ sales revenue">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">EBIT</div>
+      <div class="vocab-full">Earnings Before Ineterest And Tax</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">EBIT=revenue - operating costs<br>EBIT=EBITDA - depreciation - amortization<br>same as OPERATING INCOME<br>EBIT (operating) margin = OPERATING PROFIT/ SALES REVENUE</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="ebitda earnings before interest, tax,
+depreciation and amortisation earnings before interest, tax,
+depreciation and amortisation
+ebitda margin = ebitda/sales (ebitda margin tells how much company
+ earns from its revenue → shows operating profutability as % of sales)">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">EBITDA</div>
+      <div class="vocab-full">Earnings Before Interest, Tax,
+Depreciation And Amortisation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">earnings before Interest, Tax,<br>depreciation and amortisation<br>EBITDA margin = EBITDA/SALES (EBITDA margin tells how much company<br>earns from its revenue → shows operating profutability as % of sales)</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="efficient frontier efficient frontier set of optimal portfolios with the best return for a given level of risk
+
+meaning:
+you cannot get higher return without taking more risk
+you cannot reduce risk without lowering return
+
+how to think:
+m">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">EFFICIENT FRONTIER</div>
+      <div class="vocab-full">Efficient Frontier</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">set of optimal portfolios with the best return for a given level of risk<br>Meaning:<br>You cannot get higher return without taking more risk<br>You cannot reduce risk without lowering return<br>How to think:<br>Many portfolio combinations exist<br>Efficient frontier = the best ones<br>Visual idea:<br>Curve on a graph:<br>X-axis → risk (volatility)<br>Y-axis → return<br>Key points:<br>Points below curve → inefficient (bad choices)<br>Points on curve → optimal<br>Higher on curve → more return, more risk</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="etf exchange trading fund a fund that holds a basket of assets and trades like a stock
+meaning:
+
+one etf = many investments inside
+(stocks, bonds, etc.)
+
+examples:
+tracks an index (e.g. s&amp;p 500)
+sector etfs (healthcare, tech)
+">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">ETF</div>
+      <div class="vocab-full">Exchange Trading Fund</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">a fund that holds a basket of assets and trades like a stock<br>Meaning:<br>One ETF = many investments inside<br>(stocks, bonds, etc.)<br>Examples:<br>Tracks an index (e.g. S&amp;P 500)<br>Sector ETFs (healthcare, tech)<br>Key features:<br>Traded on stock exchange (like shares)<br>Diversification (spread risk)<br>Low cost (usually)<br>Why people use it:<br>Easy way to invest in many companies at once<br>Lower risk than single stocks<br>Example:<br>Buy 1 ETF → you indirectly own 500 companies<br>Key idea:<br>Mix of fund + stock</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="euribor euribor avergae interest rate at which major european banks lend money to each other in eur">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">EURIBOR</div>
+      <div class="vocab-full">Euribor</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">avergae interest rate at which major european banks lend money to each other in EUR</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="ev enterprise value value of business
+total value of company operations
+enterprise value is  the net cost of acquiring the firm´s equity, takings its cash, 
+paying off all debt, and owning the unlevered business
+
+how muc">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">EV</div>
+      <div class="vocab-full">Enterprise Value</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">value of business<br>total value of company operations<br>enterprise value is  the net cost of acquiring the firm´s equity, takings its cash,<br>paying off all debt, and owning the unlevered business<br>how much cahs flow is able to generate over longer period of time - FCFF (free cahs flow to the firm)<br>EV = MARKET VALUE OF EQUITY + DEBT - CASH<br>EV= market value of equity + Market value of debt- Cash &amp; Cash Equivalents<br>Meaning:<br>What it would cost to buy the whole company<br>Includes debt you must take over<br>Subtracts cash you get<br>Example:<br>Market cap = €1,000<br>Debt = €500<br>Cash = €200<br>→ EV = €1,300</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="fcf free cash flow cash a company generates after covering all necessary investments
+fcff (to firm) →for both debt + equity holders
+fcfe (to equity) →only for shareholders">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">FCF</div>
+      <div class="vocab-full">Free Cash Flow</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">cash a company generates after covering all necessary investments<br>FCFF (to firm) →For both debt + equity holders<br>FCFE (to equity) →Only for shareholders</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="fcfe free cash flow to equity cash available to shareholders after all expenses, debt, and investments
+*will the company have enough money to repy the bank/will shareholders be happy with return
+key difference vs fcff:
+fcff → for ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">FCFE</div>
+      <div class="vocab-full">Free Cash Flow To Equity</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">cash available to shareholders after all expenses, debt, and investments<br>*will the company have enough money to repy the bank/will shareholders be happy with return<br>Key difference vs FCFF:<br>FCFF → for debt + equity<br>FCFE → only for equity (after debt payments)<br>Formula (common):<br>FCFE = Net income + Depreciation &amp; amortization-CAPEX-ΔNOWC+Net<br>borrowing<br>Interpretation:<br>High FCFE → strong ability to pay dividends<br>Low/negative → limited cash for shareholders</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="free cahs flow free cash flow how much cash can we extract out of the business
+
+cash left after a company pays for operations and investments
+
+what it shows:
+financial strength
+ability to generate cash
+
+interpretation:
+positive fc">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">FREE CAHS FLOW</div>
+      <div class="vocab-full">Free Cash Flow</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">how much cash can we extract out of the business<br>cash left after a company pays for operations and investments<br>What it shows:<br>Financial strength<br>Ability to generate cash<br>Interpretation:<br>Positive FCF → healthy<br>Negative FCF → investing heavily or weak</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="fv future value future value (fv) =
+→ value of money today at a point in the future
+
+meaning:
+shows how money grows over time with interest - you must compound it
+
+example:
+€100 today
+interest = 10%
+→ in 1 year = €11">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">FV</div>
+      <div class="vocab-full">Future Value</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Future Value (FV) =<br>→ value of money today at a point in the future<br>Meaning:<br>Shows how money grows over time with interest - you must compound it<br>Example:<br>€100 today<br>Interest = 10%<br>→ In 1 year = €110<br>Formula (idea):<br>FV = Present value × (1 + r)ⁿ<br>Use:<br>Savings and investments<br>Planning future wealth<br>Key idea:<br>Money today becomes more in the future<br>Short:<br>FV = what today’s money will be worth later</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="interest coverage
+ ratio interest coverage ratio interest coverage ratio =
+→ how easily a company can pay its interest expenses
+
+formula
+interest coverage = ebit ÷ interest expense
+meaning
+shows how many times profit covers interest
+example
+ebit = €">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">INTEREST COVERAGE
+ RATIO</div>
+      <div class="vocab-full">Interest Coverage Ratio</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Interest Coverage Ratio =<br>→ how easily a company can pay its interest expenses<br>Formula<br>Interest coverage = EBIT ÷ Interest expense<br>Meaning<br>Shows how many times profit covers interest<br>Example<br>EBIT = €100<br>Interest = €20<br>→ Ratio = 5<br>→ Company can pay interest 5 times<br>Interpretation<br>5 → strong, safe ✅<br>2–5 → acceptable<br>&lt; 2 → risky ❌<br>&lt; 1 → cannot pay interest (serious problem)<br>Key idea<br>→ Higher = safer<br>Short<br>→ Interest coverage = ability to pay interest from profits</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="irr internal rate of return discount rate at which npv = 0
+meaning: oit is the actual return on inventment
+decision rule:
+irr &gt; wacc → accept ✅
+irr &lt; wacc → reject ❌
+connection:
+npv uses wacc
+irr finds the rate where npv = 0
+
+ke">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">IRR</div>
+      <div class="vocab-full">Internal Rate Of Return</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">discount rate at which NPV = 0<br>meaning: oit is the actual return on inventment<br>Decision rule:<br>IRR &gt; WACC → accept ✅<br>IRR &lt; WACC → reject ❌<br>Connection:<br>NPV uses WACC<br>IRR finds the rate where NPV = 0<br>Key point:<br>IRR is intuitive (a %)<br>NPV is more reliable (absolute value)<br>decision making process to be done on NPV and not on IRR<br>Example:<br>IRR = 12%<br>WACC = 8%<br>→ good investment</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="leverage leverage leverage =
+→ use of borrowed money to increase investment size
+
+meaning:
+you invest more than your own capital
+use debt to amplify returns
+
+example:
+you have €100
+borrow €100
+→ invest €200">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">LEVERAGE</div>
+      <div class="vocab-full">Leverage</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Leverage =<br>→ use of borrowed money to increase investment size<br>Meaning:<br>You invest more than your own capital<br>Use debt to amplify returns<br>Example:<br>You have €100<br>Borrow €100<br>→ Invest €200</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="leveraged capitalisation leveraged capitalisation when a firm uses borrowes fudns to pay a large special dividend or
+ repurchase a significant amount of oustanding shares">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">LEVERAGED CAPITALISATION</div>
+      <div class="vocab-full">Leveraged Capitalisation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">when a firm uses borrowes fudns to pay a large special dividend or<br>repurchase a significant amount of oustanding shares</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="levered portfolio levered portfolio levered portfolio =
+→ portfolio created using borrowed money (debt)
+
+meaning:
+you invest more than your own capital
+use borrowing to increase exposure
+
+example:
+you have €100
+borrow €100
+→ invest €200">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">LEVERED PORTFOLIO</div>
+      <div class="vocab-full">Levered Portfolio</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Levered portfolio =<br>→ portfolio created using borrowed money (debt)<br>Meaning:<br>You invest more than your own capital<br>Use borrowing to increase exposure<br>Example:<br>You have €100<br>Borrow €100<br>→ Invest €200 total<br>Effect:<br>If returns are positive → gains are higher ✅<br>If returns are negative → losses are bigger ❌</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="liquidity liquidity liquidity =
+→ how easily an asset can be bought or sold without affecting its price
+
+meaning:
+high liquidity → easy to trade quickly
+low liquidity → hard to trade, price may move a lot
+
+examples:
+cash">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">LIQUIDITY</div>
+      <div class="vocab-full">Liquidity</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Liquidity =<br>→ how easily an asset can be bought or sold without affecting its price<br>Meaning:<br>High liquidity → easy to trade quickly<br>Low liquidity → hard to trade, price may move a lot<br>Examples:<br>Cash → very liquid<br>Large stocks → liquid<br>Real estate → illiquid<br>Why important:<br>Affects risk and pricing<br>More liquid = safer, easier to exit<br>Short:<br>Liquidity = ease of converting asset to cash</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="llc limited liability companies limited liability company (llc) =
+→ a company where owners are not personally responsible for its debts
+
+meaning:
+if company fails → owners lose only what they invested
+their personal assets (house, s">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">LLC</div>
+      <div class="vocab-full">Limited Liability Companies</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Limited liability company (LLC) =<br>→ a company where owners are not personally responsible for its debts<br>Meaning:<br>If company fails → owners lose only what they invested<br>Their personal assets (house, savings) are protected<br>Example:<br>You invest €10,000<br>Company goes bankrupt<br>→ You lose €10,000 (not more)<br>Why important:<br>Reduces risk for investors<br>Encourages entrepreneurship</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="market capitalisation market capitalisation market capitalisation (market cap) =
+→ total value of a company’s equity
+
+formula:
+market cap = share price × shares outstanding
+
+example:
+share price = €50
+shares = 1,000,000
+→ market cap = €50 milli">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">MARKET CAPITALISATION</div>
+      <div class="vocab-full">Market Capitalisation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Market capitalisation (market cap) =<br>→ total value of a company’s equity<br>Formula:<br>Market cap = Share price × Shares outstanding<br>Example:<br>Share price = €50<br>Shares = 1,000,000<br>→ Market cap = €50 million<br>Meaning:<br>What the market thinks the company is worth<br>Categories:<br>Large cap → big companies<br>Mid cap → medium<br>Small cap → smaller, riskier<br>Key point:<br>Only includes equity, not debt<br>Short:<br>Market cap = total value of all shares</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="mirr modified internal rate of return what mirr does:
+
+uses:
+wacc (or cost of capital) for reinvestment
+separate financing rate if needed
+interpretation:
+same rule as irr:
+mirr &gt; wacc → accept ✅
+mirr &lt; wacc → reject ❌">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">MIRR</div>
+      <div class="vocab-full">Modified Internal Rate Of Return</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">What MIRR does:<br>Uses:<br>WACC (or cost of capital) for reinvestment<br>Separate financing rate if needed<br>Interpretation:<br>Same rule as IRR:<br>MIRR &gt; WACC → accept ✅<br>MIRR &lt; WACC → reject ❌</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="mrp market risk premium market risk premium (mrp) =
+→ extra return investors expect for investing in stocks instead of risk-free assets
+
+formula:
+market risk premium = expected market return − risk-free rate
+
+example:
+market">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">MRP</div>
+      <div class="vocab-full">Market Risk Premium</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Market risk premium (MRP) =<br>→ extra return investors expect for investing in stocks instead of risk-free assets<br>Formula:<br>Market risk premium = Expected market return − Risk-free rate<br>Example:<br>Market return = 8%<br>Risk-free rate = 3%<br>→ MRP = 5%<br>Key idea:<br>Investors demand higher return for riskier assets<br>Short:<br>MRP = extra return for choosing stocks over safe investments</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="nopat net operating profit after tax 
+operating profit (ebit) after tax unlevered net income
+operating profit (ebit) after tax">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">NOPAT</div>
+      <div class="vocab-full">Net Operating Profit After Tax 
+Operating Profit (Ebit) After Tax</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">unlevered net income<br>operating profit (EBIT) after tax</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="nowc (nwc) net operating working capital
+ (net working capital) money tied up in daily operations
+cash used to run the business day to day
+high nowc → more cash locked → less efficient
+low nowc → better cash management">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">NOWC (NWC)</div>
+      <div class="vocab-full">Net Operating Working Capital
+ (Net Working Capital)</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">money tied up in daily operations<br>cash used to run the business day to day<br>High NOWC → more cash locked → less efficient<br>Low NOWC → better cash management</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="npv net present value npv = present value of future cash flows − initial cost
+what npv does:
+it converts future money into today’s value and compares it to what you invest.
+tells you if an investment is worth it:
+npv &gt; 0 →">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">NPV</div>
+      <div class="vocab-full">Net Present Value</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">NPV = Present value of future cash flows − Initial cost<br>What NPV does:<br>It converts future money into today’s value and compares it to what you invest.<br>Tells you if an investment is worth it:<br>NPV &gt; 0 → good investment<br>NPV = 0 → break even<br>NPV &lt; 0 → bad investment<br>NPV = present value of future cahs flows - initial costs (initial investment)<br>How to understand it: future cash convert to today and compare with costs (investment)<br>Simple example:<br>Invest today: €1,000<br>Receive in 1 year: €1,100<br>Discount rate: 10%<br>Future €1,100 is worth €1,000 today<br>→ NPV = 1,000 − 1,000 = 0 (just fair)<br>Another example (better)<br>Invest: €1,000<br>Future value (today equivalent): €1,200<br>→ NPV = +200 → good</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="oi operating income profit from core business operations
+oi=revenue-operating expenses
+same as ebit">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">OI</div>
+      <div class="vocab-full">Operating Income</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">profit from core business operations<br>OI=REVENUE-OPERATING EXPENSES<br>same as EBIT</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="opportunity cost opportunity cost opportunity cost =
+→ value of the next best alternative you give up
+
+meaning:
+when you choose one option
+you lose the benefit of another option
+
+example:
+invest €1,000 in stock a (return 5%)
+you could">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">OPPORTUNITY COST</div>
+      <div class="vocab-full">Opportunity Cost</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Opportunity cost =<br>→ value of the next best alternative you give up<br>Meaning:<br>When you choose one option<br>You lose the benefit of another option<br>Example:<br>Invest €1,000 in stock A (return 5%)<br>You could have earned 8% in stock B<br>→ Opportunity cost = 3%</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="p/e ratio price-earnings ratio how much investors pay for €1 of earnings
+
+p/e = share price ÷ earnings per share (eps)
+
+interpretation:
+high p/e → high growth expectations (or overvalued)
+low p/e → low expectations (or undervalued)">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">P/E ratio</div>
+      <div class="vocab-full">Price-Earnings Ratio</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">how much investors pay for €1 of earnings<br>P/E = Share price ÷ Earnings per share (EPS)<br>Interpretation:<br>High P/E → high growth expectations (or overvalued)<br>Low P/E → low expectations (or undervalued)<br>Important:<br>Must compare within same industry<br>Key idea:<br>P/E reflects market expectations about future growth<br>Share price = €50<br>EPS = €5<br>→ P/E = 10<br>Meaning:<br>Investors pay €10 for €1 of profit</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="perepetuity perpetuity when a constant cash flow will occur at regular intervals forever">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">PEREPETUITY</div>
+      <div class="vocab-full">Perpetuity</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">when a constant cash flow will occur at regular intervals forever</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="perpetualy bond perpetual bond bond with no maturity date">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">PERPETUALY BOND</div>
+      <div class="vocab-full">Perpetual Bond</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">bond with no maturity date</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="primary market primary market primary market =
+→ market where new securities are issued for the first time
+
+meaning:
+company sells shares or bonds directly to investors
+company receives the money
+
+examples:
+ipo (initial public off">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">PRIMARY MARKET</div>
+      <div class="vocab-full">Primary Market</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Primary market =<br>→ market where new securities are issued for the first time<br>Meaning:<br>Company sells shares or bonds directly to investors<br>Company receives the money<br>Examples:<br>IPO (initial public offering)<br>New bond issuance<br>Key point:<br>Money goes to the company, not other investors</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="profitability index profitability index value created per 1€ invested
+meaning:
+measures efficiency of investment
+
+interpretation:
+pi &gt; 1 → good investment ✅
+pi = 1 → break even
+pi &lt; 1 → bad investment ❌
+profitability index = value created (">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">PROFITABILITY INDEX</div>
+      <div class="vocab-full">Profitability Index</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">value created per 1€ invested<br>Meaning:<br>Measures efficiency of investment<br>Interpretation:<br>PI &gt; 1 → good investment ✅<br>PI = 1 → break even<br>PI &lt; 1 → bad investment ❌<br>Profitability index = value created (NPV)/ resource consumed</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="pv present value present value (pv) =
+→ value today of money you will receive in the future
+
+meaning:
+future money is worth less today - you must discount it
+because of interest / opportunity cost
+
+example:
+€110 in 1 ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">PV</div>
+      <div class="vocab-full">Present Value</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Present Value (PV) =<br>→ value today of money you will receive in the future<br>Meaning:<br>Future money is worth less today - you must discount it<br>Because of interest / opportunity cost<br>Example:<br>€110 in 1 year<br>Discount rate = 10%<br>→ PV = €100 today<br>Why:<br>€100 today can grow to €110 in 1 year<br>Formula (idea):<br>PV = Future value ÷ (1 + r)ⁿ<br>Use<br>Investment decisions<br>NPV calculations<br>Valuation<br>Key idea:<br>Convert future cash → today’s value<br>Short:<br>PV = what future money is worth today</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="retained earnings retained earnings proft that company keeps insetad of paying out dividens">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">RETAINED EARNINGS</div>
+      <div class="vocab-full">Retained Earnings</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">proft that company keeps insetad of paying out dividens</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="retained earnings retained earnings cumulative profit kept in the company over time
+meaning:
+not paid out as dividends
+reinvested in the business
+
+what it is used for:
+growth (investments, expansion)
+debt repayment
+building reserves
+
+in">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">RETAINED EARNINGS</div>
+      <div class="vocab-full">Retained Earnings</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">cumulative profit kept in the company over time<br>Meaning:<br>Not paid out as dividends<br>Reinvested in the business<br>What it is used for:<br>Growth (investments, expansion)<br>Debt repayment<br>Building reserves<br>Interpretation:<br>Increasing → company is accumulating value<br>Decreasing → losses or high dividends</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="retention rate retention rate percentage of profit kept in the company (not paid as dividends)
+shows how much profit is reinvested">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">RETENTION RATE</div>
+      <div class="vocab-full">Retention Rate</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">percentage of profit kept in the company (not paid as dividends)<br>shows how much profit is reinvested</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="return return return
+→ total gain or loss (as %)
+
+includes:
+income (yield)
+price change (capital gain)
+
+example:
+price: €100 → €110
+dividend: €5
+→ return = 15%
+key difference
+yield → income only
+return → income + p">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">RETURN</div>
+      <div class="vocab-full">Return</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Return<br>→ total gain or loss (as %)<br>Includes:<br>income (yield)<br>price change (capital gain)<br>Example:<br>Price: €100 → €110<br>Dividend: €5<br>→ Return = 15%<br>Key difference<br>Yield → income only<br>Return → income + price change<br>Short<br>Yield = cash income %<br>Return = total performance %<br>Think of 2 ways you earn money from a stock<br>1. Cash you receive → YIELD<br>Dividends or interest<br>2. Price change → part of RETURN<br>Stock goes up or down<br>Example<br>You buy a stock for €100<br>You get €5 dividend → yield = 5%<br>Price goes to €110 → gain €10<br>Now:<br>Yield = €5 → 5%<br>Return = €5 + €10 = €15 → 15%<br>Key idea<br>Yield = only cash income<br>Return = everything you earn</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="roce return on capital employed show return generated from all invested capital
+roce &gt;wacc →value creation
+roce&lt;wacc →value destruction">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">ROCE</div>
+      <div class="vocab-full">Return On Capital Employed</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">show return generated from all invested capital<br>ROCE &gt;WACC →value creation<br>ROCE&lt;WACC →value destruction</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="roe return on equity how wfficiently company uses capital">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">ROE</div>
+      <div class="vocab-full">Return On Equity</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">how wfficiently company uses capital</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="secondary market secondary market secondary market =
+→ market where existing securities are traded between investors
+
+meaning:
+you buy/sell shares from other investors
+company does not receive money
+
+examples:
+stock exchanges (e.g. ny">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">SECONDARY MARKET</div>
+      <div class="vocab-full">Secondary Market</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Secondary market =<br>→ market where existing securities are traded between investors<br>Meaning:<br>You buy/sell shares from other investors<br>Company does not receive money<br>Examples:<br>Stock exchanges (e.g. NYSE, NASDAQ)<br>Key point:<br>Provides liquidity<br>Allows investors to enter/exit investments<br>Comparison:<br>Primary market → company gets money<br>Secondary market → investors trade among themselves</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="shares  start time with o, but no known end life time → cash flow can be calculated
+ but predictibly - when youpredict you do mistakes. and thereforem stocks are 
+riskier
+there is no face value
+shares does no">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">SHARES</div>
+      <div class="vocab-full"></div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">start time with O, but no known end life time → cash flow can be calculated<br>but predictibly - when youpredict you do mistakes. And thereforem Stocks are<br>riskier<br>there is no face value<br>shares does not have fixed interest rates</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="shares outstanding shares outstanding total number of shares currently held by investors
+
+example:
+company issued 1,000 shares
+→ shares outstanding = 1,000
+
+key point:
+can change over time (new shares, buybacks)">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">SHARES OUTSTANDING</div>
+      <div class="vocab-full">Shares Outstanding</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">total number of shares currently held by investors<br>Example:<br>Company issued 1,000 shares<br>→ Shares outstanding = 1,000<br>Key point:<br>Can change over time (new shares, buybacks)</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="stock stock → you own a small part of a company
+
+example
+company is divided into 1,000 shares
+you buy 10 shares
+
+→ you own 1% of the company
+
+what you get
+if company grows → stock price goes up
+if company pays di">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">STOCK</div>
+      <div class="vocab-full">Stock</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">→ You own a small part of a company<br>Example<br>Company is divided into 1,000 shares<br>You buy 10 shares<br>→ You own 1% of the company<br>What you get<br>If company grows → stock price goes up<br>If company pays dividends → you get cash<br>Compare with bond<br>Stock → owner<br>Bond → lender<br>Risk<br>Can earn a lot<br>Can also lose money<br>Key idea<br>→ You share in the success or failure of the company<br>→ Stock = ownership in a company<br>stocks similar as bonds but:<br>the amounts of dividens are not know for sure<br>the timing for dividends is not know for sure<br>dividends are typically not fixed<br>there is no maturity date<br>there is not face value<br>also non-trivial issue of share buybacks</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="sunk cost sunk cost sunk costs =
+→ costs that have already been spent and cannot be recovered
+
+meaning:
+money is gone, regardless of future decisions
+
+example:
+you spent €1,000 on a project
+project looks bad now
+→ that €">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">SUNK COST</div>
+      <div class="vocab-full">Sunk Cost</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Sunk costs =<br>→ costs that have already been spent and cannot be recovered<br>Meaning:<br>Money is gone, regardless of future decisions<br>Example:<br>You spent €1,000 on a project<br>Project looks bad now<br>→ That €1,000 is a sunk cost<br>Key rule (very important):<br>Ignore sunk costs in decisions</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="tax shield tax shield tax shield =
+→ reduction in taxes due to deductible expenses
+most common:
+
+interest on debt is tax-deductible
+meaning:
+
+company pays less tax because interest reduces taxable income
+example:
+
+interest">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">TAX SHIELD</div>
+      <div class="vocab-full">Tax Shield</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Tax shield =<br>→ reduction in taxes due to deductible expenses<br>Most common:<br>Interest on debt is tax-deductible<br>Meaning:<br>Company pays less tax because interest reduces taxable income<br>Example:<br>Interest = €100<br>Tax rate = 30%<br>→ Tax saved = €30<br>Core idea<br>→ You pay less tax if you have debt<br>Why?<br>Interest (on loans) is a cost<br>Costs reduce profit<br>Lower profit → lower tax<br>Example<br>Without debt:<br>Profit = €100<br>Tax (30%) = €30<br>→ You keep €70<br>With debt:<br>Interest = €20<br>Profit = €80<br>Tax (30%) = €24<br>→ You keep €56<br>What happened?<br>You paid €6 less tax (30 − 24)<br>→ That saving = tax shield</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="transaction costs transaction costs transaction costs =
+→ costs you pay when buying or selling an asset
+
+meaning:
+extra costs on top of the asset price
+
+examples:
+broker fees
+bid–ask spread
+taxes
+commissions
+
+why important:
+reduce your ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">TRANSACTION COSTS</div>
+      <div class="vocab-full">Transaction Costs</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Transaction costs =<br>→ costs you pay when buying or selling an asset<br>Meaning:<br>Extra costs on top of the asset price<br>Examples:<br>Broker fees<br>Bid–ask spread<br>Taxes<br>Commissions<br>Why important:<br>Reduce your actual return<br>More trading → higher costs<br>Example:<br>Buy stock at €100<br>Pay €2 fees<br>→ real cost = €102<br>Key idea:<br>Trading is not free<br>Short:<br>Transaction costs = expenses of making a trade</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="unlevered portfolio unlevered portfolio unlevered portfolio =
+→ portfolio built using only your own money (no debt)
+
+meaning:
+no borrowing
+no leverage
+
+example:
+you invest €100
+→ total investment = €100
+
+effect:
+returns = normal (not amplif">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">UNLEVERED PORTFOLIO</div>
+      <div class="vocab-full">Unlevered Portfolio</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Unlevered portfolio =<br>→ portfolio built using only your own money (no debt)<br>Meaning:<br>No borrowing<br>No leverage<br>Example:<br>You invest €100<br>→ Total investment = €100<br>Effect:<br>Returns = normal (not amplified)<br>Lower risk compared to levered portfolio</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="var variance variance =
+→ measure of how spread out returns are from the average
+
+meaning:
+shows how much returns deviate from the mean
+
+interpretation:
+high variance → large fluctuations → high risk
+low variance ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">Var</div>
+      <div class="vocab-full">Variance</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Variance =<br>→ measure of how spread out returns are from the average<br>Meaning:<br>Shows how much returns deviate from the mean<br>Interpretation:<br>High variance → large fluctuations → high risk<br>Low variance → stable returns → low risk<br>Connection:<br>Standard deviation = √variance<br>Example:<br>Stable returns → low variance<br>Big ups and downs → high variance<br>Why important:<br>Core measure of risk in finance<br>Used in portfolio theory<br>Short:<br>Variance = measure of return variability (risk)</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="vega vega parameter vega (option parameter) =
+→ measures how much an option’s price changes when volatility changes
+
+meaning:
+sensitivity to volatility
+
+interpretation:
+high vega → option price strongly affected by volat">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">VEGA</div>
+      <div class="vocab-full">Vega Parameter</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Vega (option parameter) =<br>→ measures how much an option’s price changes when volatility changes<br>Meaning:<br>Sensitivity to volatility<br>Interpretation:<br>High vega → option price strongly affected by volatility<br>Low vega → small impact<br>Example:<br>Vega = 0.5<br>→ If volatility increases by 1%<br>→ Option price increases by 0.5<br>Key idea:<br>More uncertainty (volatility) → options become more valuable</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="volatility/
+standard deviation volatility/standard deviation standard deviation of a return is also reffered as volatility
+volatility =
+→ how much an investment price moves up and down
+
+standard deviation =
+→ the measure used to quantify volatility
+
+connection:">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">VOLATILITY/
+STANDARD DEVIATION</div>
+      <div class="vocab-full">Volatility/Standard Deviation</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">standard deviation of a return is also reffered as volatility<br>Volatility =<br>→ how much an investment price moves up and down<br>Standard deviation =<br>→ the measure used to quantify volatility<br>Connection:<br>Volatility is the concept<br>Standard deviation is the number that measures it<br>Meaning:<br>High standard deviation → large price swings → high risk<br>Low standard deviation → stable price → low risk<br>Volatility =<br>→ how much an investment price moves up and down over time<br>mesures systematic and unsystematic risk<br>Meaning:<br>Measures uncertainty / risk<br>Interpretation:<br>High volatility → big price swings → higher risk<br>Low volatility → stable price → lower risk<br>Example:<br>Stock A: moves €1 → low volatility<br>Stock B: moves €10 → high volatility</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="wacc weighted avergae cost of capital average cost a company pays for its financing →meaning cost of using money from shareholders (equity) and lenders (debt)
+what it tells you?
+- high wacc = expensive financing →higher risk
+- low wacc = ">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">WACC</div>
+      <div class="vocab-full">Weighted Avergae Cost Of Capital</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">average cost a company pays for its financing →meaning cost of using money from shareholders (equity) and lenders (debt)<br>What it tells you?<br>- high WACC = expensive financing →higher risk<br>- low WACC = cheaper financing → more stable<br>IMPORTANT: WACC = required return investors expect for funding the company<br>the cost of capital is the weighted average of the required rates of raturn on equity and debt<br>discont rate (WACC) r<br>WACC is used as the discount rate in NPV<br>How it works:<br>NPV = present value of future cash flows<br>To get present value → you discount using WACC<br>Why WACC:<br>It represents required return by investors<br>So it’s the minimum acceptable return<br>Interpretation together:<br>If project return &gt; WACC → NPV &gt; 0 → good ✅<br>If project return &lt; WACC → NPV &lt; 0 → bad ❌<br>Simple logic:<br>WACC = “required return”<br>NPV = “actual value created”<br>Key relationship:<br>Higher WACC → lower NPV<br>Lower WACC → higher NPV</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="yield yield annual cash income from an investement shown as a persentage of ist price or volume
+
+yield is only one part of return
+yield
+→ income from an investment (as %)
+
+focus: regular cash flow
+usually from:
+d">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">YIELD</div>
+      <div class="vocab-full">Yield</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">annual cash income from an investement shown as a persentage of ist price or volume<br>yield is only one part of return<br>Yield<br>→ income from an investment (as %)<br>Focus: regular cash flow<br>Usually from:<br>dividends<br>interest<br>Example:<br>Dividend = €5<br>Price = €100<br>→ Yield = 5%</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="ytm yield to maturity yield to maturity (ytm) =
+→ total return you earn if you hold a bond until it matures
+
+meaning
+includes:
+interest (coupons)
+gain/loss from price difference
+time value of money
+
+simple example
+buy bond">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">YTM</div>
+      <div class="vocab-full">Yield To Maturity</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">Yield to Maturity (YTM) =<br>→ total return you earn if you hold a bond until it matures<br>Meaning<br>Includes:<br>interest (coupons)<br>gain/loss from price difference<br>time value of money<br>Simple example<br>Buy bond for €950<br>Get €1,000 at maturity<br>Plus interest payments<br>→ YTM reflects all of this as one % return<br>YTM = single discount rate that equates the present values of the bonds remaning cash flows to its current price<br>Key relationship<br>YTM ↑ → price ↓<br>YTM ↓ → price ↑<br>Why<br>Risky bonds must offer higher return<br>Safe bonds can offer lower return<br>Simple interpretation<br>High YTM → risky / cheap bond<br>Low YTM → safe / expensive bond</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="zero-coupon bond zero-coupon bond does not make coupn payments
+always seel at discount (a price lower thatn face value) - they are also
+called pure discount bonds
+
+example: treasury bills (us governenet bonds with a maturity of 1 year">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">ZERO-COUPON BOND</div>
+      <div class="vocab-full">Zero-Coupon Bond</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">does not make coupn payments<br>always seel at discount (a price lower thatn face value) - they are also<br>called Pure discount bonds<br>example: Treasury bills (US governenet bonds with a maturity of 1 year)</p>
+    </div>
+  </div>
+  <div class="vocab-card" data-search="β beta sensitivity to systematic risk
+beta tells: the expected percent change in the return of a security
+ for a 1% change in the return of the market portfolio
+
+beta differs from volatility (vollatility mea">
+    <div class="vocab-header" onclick="this.parentElement.classList.toggle('vocab-open')">
+      <div class="vocab-abbr">β</div>
+      <div class="vocab-full">Beta</div>
+      <span class="q-chevron">▼</span>
+    </div>
+    <div class="vocab-body">
+      <p class="vocab-def">sensitivity to systematic risk<br>beta tells: the expected percent change in the return of a security<br>for a 1% change in the return of the market portfolio<br>beta differs from volatility (vollatility measures total risk (systemtic plus unsystematic rist), while beta measure only systematic risk<br>Beta (β) =<br>→ measure of how a stock moves relative to the market<br>Meaning:<br>Shows sensitivity to market movements<br>Interpretation:<br>β = 1 → moves same as market (same averga risk as all other stock)<br>β &gt; 1 → more volatile than market (more risk than avergae stock)<br>β &lt; 1 → less volatile (less risk than average stock)<br>β &lt; 0 → moves opposite direction<br>Example:<br>β = 1.5<br>→ if market goes +10%, stock ≈ +15%</p>
+    </div>
+  </div>
+  </div><!-- /vocab-list -->
+
+  <script>
+  function filterVocab(q) {
+    const s = q.toLowerCase();
+    document.querySelectorAll(".vocab-card").forEach(function(c) {
+      c.style.display = c.dataset.search.includes(s) ? "" : "none";
+    });
+  }
+  </script>
+</div><!-- /page-vocab -->
 </main>
 </div><!-- /.layout -->
 
